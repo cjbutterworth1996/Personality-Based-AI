@@ -9,4 +9,4 @@ This project will use two different types of pattern recognition methods in all 
 
 ## Similar Projects
 
-
+There are a number of horror games that utilize proceduraly generated maps and enemy spawning. This artefact will differ from the Vanish experiments in a number of ways. In the Vanish experiments, the physiological input modified how the AI controller spawned in preset events, rooms, monster AI, etc. In this artefact, the physiological input will modify the AI controller based soley off pattern recognition alone. Instead of a number of preset scripted events, the AI will experiment and catalog different ways of scaring users, theoretically becoming more effective at eliciting more intense fear responses over time. 
