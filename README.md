@@ -5,7 +5,11 @@ Nightmare Labyrinth is a procedurally generated labyrinth which players have to 
 
 ## Project Scope
 
-This project will use two different types of pattern recognition methods in all possible combinations with two different approaches to generating fear responses. The demo itself will consist of a procedurally generated maze, and 3 types of AI controlled enemies: spiders, clowns, and demons. The player will be hooked up to a finger-strap style pulse monitor which will let the AI determine the player's current fear state.
+This project will use two different types of pattern recognition methods in combination with a singular application approach to generating arousal responses. The demo itself will consist of a procedurally generated maze and 3 types of AI controlled enemies: spiders, clowns, and demons. The player will be hooked up to a finger-strap style pulse monitor which will let the AI determine the player's current arousal/fear state.
+
+The first pattern recognition method will be reinforcement learning. Reinforcement learning teaches AI by programming it to maximize a reward function. The second pattern recognition method will be supervised learning, which teaches AI by giving it a default target outcome. These two pattern recognition algorithms then iteratively test inputs to determine the best way to achieve their respective objectives.
+
+Using practice-based research, this artefact will determine which recognition pattern is more effective at producing a higher arousal response in players.
 
 ## Similar Projects
 
@@ -18,3 +22,6 @@ One of the biggest issues with this study is that they do not explain why they c
 This artefact will differ from the Vanish development team's study in a number of ways. First, they used 3 different physiological inputs, whereas this study will only use one: heartrate. Another difference will be in the overall aim of the study. The physiological inputs for arousal meant that "the player's arousal ratings mapped to increases in the avatar's adrenaline levels, which translated into higher running speeds. This was actually detrimental to the player, because "stealthy, paced exploration is the optimal game strategy," so as not to alert any nearby monsters. This resulted in players purposefully remaining calmer, therefore making the game easier. As a result, their study's conclusions reflect a decrease in arousal states from their control group. (insert image here).
 
 Conversely, in this artefact, the AI will experiment and catalog different ways of scaring users, theoretically becoming more effective at eliciting more intense arousal responses over time.
+
+## Software Architecture and Design
+
