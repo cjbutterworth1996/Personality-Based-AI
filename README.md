@@ -3,13 +3,13 @@
 ## Introduction
 Nightmare Labyrinth is a procedurally generated labyrinth which players have to navigate while avoiding enemies and traps along the way. This project would focus on using a heartbeat sensor to detect when variable conditions and combinations result in an increased heartrate. Based on these findings, the AI controller could then alter the generation of the maze and enemy spawning to continuosly scare the player. My chosen specialism is artificial intelligence in games programming. This project is in alignment with that specialization because the AI will be in control of procedurally spawning a labyrinth and the enemies within. This artefact is needed to prove that AI-controlled horror games can procedurally generate terror.
 
-## Project Scope
+## Project Scope and Software Architecture
 
 This project will use two different types of pattern recognition methods in combination with a singular application approach to generating arousal responses. The demo itself will consist of a procedurally generated maze and 3 types of AI controlled enemies: spiders, clowns, and demons. The player will be hooked up to a finger-strap style pulse monitor which will let the AI determine the player's current arousal/fear state.
 
 The first pattern recognition method will be reinforcement learning. Reinforcement learning teaches AI by programming it to maximize a reward function. The second pattern recognition method will be supervised learning, which teaches AI by giving it a default target outcome. These two pattern recognition algorithms then iteratively test inputs to determine the best way to achieve their respective objectives.
 
-Using practice-based research, this artefact will determine which recognition pattern is more effective at producing a higher arousal response in players.
+Using practice-based research, this artefact will determine which recognition pattern is more effective at producing a higher arousal response in players. This practice-based research will determine output effectiveness primarily and objectively via arousal scores (heartbeats per minute) as well as secondarily and subjectively via player questionnaires. Combined, the data received will show if the player's heartrate can be influenced by the given AI controller as well as the player's feelings towards how stimulating the experience was. Additional testing methods such as an increased number of physiological inputs, different types of fear simulations, and more types of recognition patterns would all increase the relevance and validity of the project's data, but fall outside the current scope due to time limitations.
 
 ## Similar Projects
 
@@ -23,5 +23,4 @@ This artefact will differ from the Vanish development team's study in a number o
 
 Conversely, in this artefact, the AI will experiment and catalog different ways of scaring users, theoretically becoming more effective at eliciting more intense arousal responses over time.
 
-## Software Architecture and Design
-
+# Bibliography
