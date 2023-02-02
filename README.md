@@ -16,8 +16,8 @@ Using practice-based research, this artefact will determine if the AI is more ef
 ## Scope Feasibility
 Given that there are only 3 different options of enemies to choose from, the parameters that the AI must optimize are:
 
-1. How long should it wait between enemy spawns
-2. What kind of enemy should it spawn
+1. How long it should wait between enemy spawns
+2. What kind of enemy it should spawn
 
 This artefact will use PyTorch, which provides "scalable distributed training and performance optimization in research and production," and integrates directly into Unity (PyTorch). Additionally, I will be using a standardized library that uses PyTorch called Stable-Baselines3, which is "a set of reliable implementations of reinforcement learning algorithms in PyTorch," (Stable-Baselines3 2022). Using these two tools will allow me to produce an effective AI using reinforcement learning within the time scope of this project.
 
