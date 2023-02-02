@@ -5,7 +5,7 @@ This game is a procedurally generated maze which players have to navigate while 
 
 ## Project Scope
 
-The artefact will use reinforcement learning to train an AI to consistently generate higher arousal responses. The artefact will consist of a procedurally generated maze and 3 types of AI controlled enemies. The player will be hooked up to a finger-strap style pulse monitor to let the AI determine the player's heartrate.
+The artefact will use reinforcement learning to train an AI to consistently generate higher arousal responses. The artefact will consist of a procedurally generated maze and 3 types of AI controlled enemies. The player will be hooked up to a finger-strap style pulse monitor to let the AI determine the player's heartrate. 
 
 ## Software Architecture
 
@@ -27,15 +27,9 @@ There are six weeks of production time pending the approval of this proposal. Us
 
 ## Similar Projects
 
-*VANISH* (2013) is "dynamically generated at run-time and continues to change while the player plays it. Each hall piece dynamically spawns with certain objects and events that dynamically spawn as well," (GameJolt 2014). The game developers for *VANISH* (2013) ran a study using the game that attempted to determine if "biofeedback-enabled adaptive methods have a significant impact on any specific aspect of the players' gameplay experience," (Nogueira et al. 2016).  The study used heartrate, skin conductivity, and facial electromyography to alter game generation.
+The game developers for *VANISH* (2013) ran a study using their game that attempted to determine if "biofeedback-enabled adaptive methods have a significant impact on any specific aspect of the players' gameplay experience," (Nogueira et al. 2016).  The study used heartrate, skin conductivity, and facial electromyography to alter game generation. Their study concluded that "biofeedback-augmented gameplay is suitable as both a dramatic enhancer and a regulator of the player experience," (Nogueira et al. 2016).
 
-In one of these alterations "the player's arousal level was inversely correlated with the probability of generating a creature encounter," (Nogueira et al. 2016). Additionally, valence was inversely correlated with the "number of possible escape routes for use in subsequent creature encounter events," (Nogueira et al. 2016). 
-
-The biggest issue with this study is that they do not explain why they chose arousal or valence to affect specific aspects of gameplay. There is no explanation given for why valence was attached to monster generations instead of arousal or vice-versa. All of their results use a combination of three disconnected physiological inputs. In this artefact, there will only be one physiological input, which will provide a more definitive look at how heartrate can affect AI decision making in video games. 
-
-Their study concluded that "(add quote)". As a result, their study's conclusions reflect a decrease in arousal states from their control group. (insert image here).
-
-Conversely, in this artefact, the AI will experiment and catalog different ways of increasing heartrate in users, theoretically becoming more effective at eliciting more intense arousal responses over time.
+The biggest issue with this study is that they do not explain why they chose certain physiological inputs to affect specific aspects of gameplay. For example, there is no explanation given for why valence was attached to monster generations instead of arousal. All of their results use a combination of three disconnected physiological inputs. In this artefact, there will only be one physiological input which will provide a more definitive look at how heartrate can affect AI decision making in video games.  
 
 # Bibliography
 
