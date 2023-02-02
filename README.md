@@ -29,11 +29,16 @@ There are six weeks of production time pending the approval of this proposal. Us
 
 The game developers for *VANISH* (2013) ran a study using their game that attempted to determine if "biofeedback-enabled adaptive methods have a significant impact on any specific aspect of the players' gameplay experience," (Nogueira et al. 2016).  The study used heartrate, skin conductivity, and facial electromyography to alter game generation. Their study concluded that "biofeedback-augmented gameplay is suitable as both a dramatic enhancer and a regulator of the player experience," (Nogueira et al. 2016).
 
-The biggest issue with this study is that they do not explain why they chose certain physiological inputs to affect specific aspects of gameplay. For example, there is no explanation given for why valence was attached to monster generations instead of arousal. All of their results use a combination of three disconnected physiological inputs. In this artefact, there will only be one physiological input which will provide a more definitive look at how heartrate can affect AI decision making in video games.  
+The biggest issue with this study is that they do not explain why they chose certain physiological inputs to affect specific aspects of gameplay. For example, there is no explanation given for why valence was attached to monster generations instead of arousal. All of their results use a combination of three disconnected physiological inputs. In this artefact, there will only be one physiological input which will provide a more definitive look at how heartrate can affect AI decision making in video games.
+
+A study done on physiological controls in gaming claims "most examples of prior research on physiologically-
+controlled games use indirect control," but "these games demonstrate how physiological input is not directly controlled, but mediated by some other player interaction, such as meditation or deep breathing," (Nacke et al. 2011).
 
 # Bibliography
 
 GAMEJOLT. 2014.'VANISH by 3DrunkMen'. Available at: https://gamejolt.com/games/vanish/29440 [accessed 2 February 2023].
+
+NACKE, Lennart, Michael KALYN, Calvin LOUGH and Regan MANDRYK. 2011. 'Biofeedback Game Design: Using Direct and Indirect Physiological Control to Enhance Game Interaction'. Paper presented at the internation conference on *Human Factors in Computing Systems*. Vancouver, Canada, 7-12 May 2011. Available at: https://www.researchgate.net/publication/221518632_Biofeedback_Game_Design_Using_Direct_and_Indirect_Physiological_Control_to_Enhance_Game_Interaction [accessed 2 February 2013].
 
 NOGUEIRA, Pedro A., Torres VASCO, Rui RODRIGUES, Eugénio OLIVEIRA and Lennart E. NACKE. 2016. 'Vanishing scares: biofeedback modulation of affective player experiences in a procedural horror game'. *Journal on Multimodal User Interfaces*, 10, 31-62.
 
