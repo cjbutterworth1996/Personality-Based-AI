@@ -1,17 +1,17 @@
 # COMP250 Proposal: Nightmare Labyrinth
 
 ## Introduction
-Nightmare Labyrinth is a game with a procedurally generated maze which players have to navigate while avoiding enemies. Players will use a pulse monitor which will allow the AI director to detect when variable conditions and combinations result in an increased heartrate. Based on these findings, the AI will then alter the generation of the maze and enemy spawning to continuosly attempt to increase the player's heartrate. My chosen specialism is artificial intelligence in games programming. This project is in alignment with that specialization because the AI director will handle procedurally spawning a labyrinth and the enemies within using machine learning. This project could be used in several different fields. An AI that can recognize emotional arousal states and then effectively respond to influence said arousal states could have many different applications including optimizing emotional responses in video games, strengthening lie detector equipment, and optimizing anxiety-reduction software.
+Nightmare Labyrinth is a game with a procedurally generated maze which players have to navigate while avoiding enemies. Players will use a pulse monitor which will allow the AI director to detect when variable conditions and combinations result in an increased heartrate. Based on these findings, the AI will then alter the generation of the maze and enemy spawning to continuosly attempt to increase the player's heartrate. My chosen specialism is artificial intelligence in games programming. This project is in alignment with that specialization because the AI director will handle procedurally spawning a labyrinth and the enemies within using machine learning. This artefact could be used in several different fields. An AI that can recognize emotional arousal states and then effectively respond to influence said arousal states could have many different applications including optimizing emotional responses in video games, strengthening lie detector equipment, and optimizing anxiety-reduction software.
 
 ## Project Scope
 
-This project will use a type of pattern recognition method called reinforcement learning in order to train an AI to successfully and consistently generate higher arousal responses. The demo itself will consist of a procedurally generated maze and 3 types of AI controlled enemies: spiders, clowns, and demons. The player will be hooked up to a finger-strap style pulse monitor which will let the AI determine the player's current arousal state.
+The artefact will use a type of pattern recognition method called reinforcement learning in order to train an AI to successfully and consistently generate higher arousal responses. The artefact will consist of a procedurally generated maze and 3 types of AI controlled enemies: spiders, clowns, and demons. The player will be hooked up to a finger-strap style pulse monitor which will let the AI determine the player's current arousal state.
 
 ## Software Architecture
 
 Reinforcement learning trains AI by programming it to maximize a reward function. It is used to "automatically evaluate the optimal behavior in a particular context or environment to improve its efficiency," (Sarker, 2021). This makes it an ideal candidate for this project, as it aims to optimize the AI's efficiency of heigtening arousal in players. Unsupervised learning is a close runner-up candidate as it allows the AI to freely associate data patterns without labels. It is used for "extracting generative features, identifying meaningful trends and structures, groupings in results, and exploratory purposes," (Sarker, 2021). This would work quite well as the AI will need to identify meaningful trends in inducing arousal in players to properly maximize arousal output. Given the time limitations of this project, the artefact will only use reinforcement learning.
 
-Using practice-based research, this artefact will determine if the AI is more effective at producing a higher arousal response in players than a similar, scripted experience. This practice-based research will determine output effectiveness primarily and objectively via arousal scores (heartbeats per minute) as well as secondarily and subjectively via player questionnaires. Combined, the data received will show if the player's heartrate can be influenced by the given AI controller as well as the player's feelings towards how stimulating the experience was. Additional testing methods such as an increased number of physiological inputs, different types of fear simulations, and more types of recognition patterns would all increase the relevancy and validity of the project's data, but fall outside the current scope due to time limitations.
+Using practice-based research, this artefact will determine if the AI is more effective at producing a higher arousal response in players than a similar, scripted experience. This practice-based research will determine output effectiveness primarily and objectively via arousal scores (heartbeats per minute) as well as secondarily and subjectively via player questionnaires. Additional testing methods such as an increased number of physiological inputs, simulations of different types of fear, and varying recognition pattern testing would all increase the relevancy and validity of the project's data, but fall outside the current scope due to time limitations.
 
 ## Scope Feasibility
 Given that there are only 3 different options of enemies to choose from, the parameters that the AI must optimize are:
@@ -22,7 +22,7 @@ Given that there are only 3 different options of enemies to choose from, the par
 
 Everything else such as sound effects, environmental scares and monster AI will be scripted and not editable by the AI controller.
 
-As for coding complexity and the time it takes to learn how to code a complex machine learning algorithm such as reinforcement learning, that will largely be taken care of using PyTorch, which provides "scalable distributed training and performance optimization in research and production." Additionally, I will be using a standardized library that uses PyTorch called Stable-Baselines3, which is "a set of reliable implementations of reinforcement learning algorithms in PyTorch." Using these two tools will allow me to produce an effective AI using reinforcement learning within the time scope of this project.
+As for coding complexity and the time it takes to learn how to code a complex machine learning algorithm such as reinforcement learning, this artefact will use PyTorch, which provides "scalable distributed training and performance optimization in research and production," and integrates directly into Unity (PyTorch). Additionally, I will be using a standardized library that uses PyTorch called Stable-Baselines3, which is "a set of reliable implementations of reinforcement learning algorithms in PyTorch," (Stable-Baselines3, 2022). Using these two tools will allow me to produce an effective AI using reinforcement learning within the time scope of this project.
 
 ## Production Timeline
 
@@ -42,4 +42,8 @@ Conversely, in this artefact, the AI will experiment and catalog different ways 
 
 # Bibliography
 
+PYTORCH. 'Home page'. Available at: https://pytorch.org/ [accessed 2 February 2023].
+
 SARKER, I.H. 2021. 'Machine Learning: Algorithms, Real-World Applications and Research Directions'. *SN Computer Science*, 2(160).
+
+STABLE-BASELINES3. 'Stable-Baselines3 Docs - Reliable Reinforcement Learning Implementations'. Available at: https://stable-baselines3.readthedocs.io/en/master/ [accessed 2 February 2023].
