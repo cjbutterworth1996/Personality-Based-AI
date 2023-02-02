@@ -3,13 +3,19 @@
 ## Introduction
 This game is a procedurally generated maze which players have to navigate while avoiding enemies. Players will use a pulse monitor that allows the AI director to detect gameplay patterns that result in fluctuations in heartrate. Based on these findings, the AI will alter the generation of the maze and enemy spawning to attempt to increase the player's heartrate. My chosen specialism is artificial intelligence in games programming. This project is in alignment with that specialization because the AI director will use machine learning to optimize procedural generation. This artefact could be used in several different fields. An AI that can recognize emotional arousal states and then effectively respond to influence those states could optimize emotional responses in video games, strengthen lie detector equipment, and optimize anxiety-reduction software among other things.
 
-## Project Scope
+## Project Outline
 
-The artefact will use reinforcement learning to train an AI to consistently generate higher arousal responses. The artefact will consist of a procedurally generated maze and 3 types of AI controlled enemies. The player will be hooked up to a finger-strap style pulse monitor to let the AI determine the player's heartrate. 
+The artefact will use reinforcement learning to train an AI to consistently generate higher arousal responses. The artefact will consist of a procedurally generated maze and 3 types of AI controlled enemies. The player will be hooked up to a finger-strap style pulse monitor to let the AI determine the player's heartrate.
+
+The parameters that the AI will be trained to optimize are:
+1. How long it should wait between enemy spawns
+2. What kind of enemy it should spawn
 
 ## Software Architecture
 
-Reinforcement learning trains AI by programming it to maximize a reward function. It is used to "automatically evaluate the optimal behavior in a particular context or environment to improve its efficiency," (Sarker 2021). This makes it an ideal candidate for this project, as it aims to optimize the AI's efficiency of heigtening  the player's heartrate. Unsupervised learning is another option as it allows the AI to freely associate data patterns without labels. It is used for "extracting generative features, identifying meaningful trends and structures, groupings in results, and exploratory purposes," (Sarker 2021). This would work well as the AI aims  to identify meaningful trends in increasing heartrate in players. Given the time limitations of this project, the artefact will only use reinforcement learning.
+Reinforcement learning trains AI by programming it to maximize a reward function. It is used to "automatically evaluate the optimal behavior in a particular context or environment to improve its efficiency," (Sarker 2021). This makes it an ideal candidate for this project, as it aims to optimize the AI's efficiency of heigtening  the player's heartrate. 
+
+Given the limited control of the director AI, there will only need to be one key class, GAME, that represents the game variables the AI will interact with. Within the game itself, there will also be a MONSTER class with different subclasses for each monster type, as well as a PLAYER class for the player character.
 
 ## Similar Projects
 
@@ -27,11 +33,6 @@ In another study on the use of biofeedback in games to learn paced breathing, th
 There are six weeks of production time pending the approval of this proposal. Using AGILE as a development life cycle model, the first week will consist of research and planning the software's architecture. Weeks two through four will be spent developing and testing the software using user feedback along the way to optimize the experience. Weeks five and six will consist of training the AI and polishing to assure the AI has enough training time to produce meaningful results. The AI will be completed as soon as possible with the game world and game elements following thereafter.
 
 ## Scope Feasibility
-Given that there are only 3 different options of enemies to choose from, the parameters that the AI must optimize are:
-
-1. How long it should wait between enemy spawns
-2. What kind of enemy it should spawn
-
 This artefact will use PyTorch, which provides "scalable distributed training and performance optimization in research and production," and integrates directly into Unity (PyTorch). Additionally, I will be using a standardized library that uses PyTorch called Stable-Baselines3, which is "a set of reliable implementations of reinforcement learning algorithms in PyTorch," (Stable-Baselines3 2022). Using these two tools will allow me to produce an effective AI using reinforcement learning within the time scope of this project.
 
 ## Research Methods
