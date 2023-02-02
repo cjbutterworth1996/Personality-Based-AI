@@ -27,12 +27,14 @@ There are six weeks of production time pending the approval of this proposal. Us
 
 ## Similar Projects
 
-The game developers for *VANISH* (2013) ran a study using their game that attempted to determine if "biofeedback-enabled adaptive methods have a significant impact on any specific aspect of the players' gameplay experience," (Nogueira et al. 2016).  The study used heartrate, skin conductivity, and facial electromyography to alter game generation. Their study concluded that "biofeedback-augmented gameplay is suitable as both a dramatic enhancer and a regulator of the player experience," (Nogueira et al. 2016).
+The game developers for *VANISH* (2013) attempted to determine if "biofeedback-enabled adaptive methods have a significant impact on any specific aspect of the players' gameplay experience," (Nogueira et al. 2016).  The study used heartrate, skin conductivity, and facial electromyography to alter game generation. Their study concluded that "biofeedback-augmented gameplay is suitable as both a dramatic enhancer and a regulator of the player experience," (Nogueira et al. 2016).
 
-The biggest issue with this study is that they do not explain why they chose certain physiological inputs to affect specific aspects of gameplay. For example, there is no explanation given for why valence was attached to monster generations instead of arousal. All of their results use a combination of three disconnected physiological inputs. In this artefact, there will only be one physiological input which will provide a more definitive look at how heartrate can affect AI decision making in video games.
+The biggest issue with this study is that they do not explain why they chose certain physiological inputs to affect specific aspects of gameplay. For example, there is no explanation given for why valence was attached to monster generations instead of arousal.
 
 A study done on physiological controls in gaming claims "most examples of prior research on physiologically-
-controlled games use indirect control," but "these games demonstrate how physiological input is not directly controlled, but mediated by some other player interaction, such as meditation or deep breathing," (Nacke et al. 2011).
+controlled games use indirect control," and "these games demonstrate how physiological input is not directly controlled, but mediated by some other player interaction, such as meditation or deep breathing," (Nacke et al. 2011).
+
+In another study on the use of biofeedback in games to learn paced breathing, the authors found that biofeedback augmentation "led to better breath control during play," proving that biofeedback augmented gaming can successfully influence biofeedback metrics, at least in a calming manner (Zafar 2020). Conversely, this artefact will attempt to prove that AI using biofeedback is also capable of inducing higher arousal states in the player.
 
 # Bibliography
 
@@ -49,3 +51,5 @@ SARKER, I.H. 2021. 'Machine Learning: Algorithms, Real-World Applications and Re
 STABLE-BASELINES3. 'Stable-Baselines3 Docs - Reliable Reinforcement Learning Implementations'. Available at: https://stable-baselines3.readthedocs.io/en/master/ [accessed 2 February 2023].
 
 *VANISH*. 2014. 3DrunkMen.
+
+ZAFAR, M. Abdullah, Beena AHMED, Rami Al RIHAWI and Ricardo GUTIERREZ-OSUNA. 2020. 'Gaming Away Stress: Using Biofeedback Games to Learn Paced Breathing". *IEEE Transactions on Affective Computing*, 11(3), 519-531.
