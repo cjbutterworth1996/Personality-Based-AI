@@ -23,10 +23,12 @@ The game developers for *VANISH* (2013) attempted to determine if "biofeedback-e
 
 The biggest issue with this study is that they do not explain why they chose certain physiological inputs to affect specific aspects of gameplay. For example, there is no explanation given for why valence was attached to monster generations instead of arousal.
 
+</br>
+</br>
 A study done on physiological controls in gaming claims "most examples of prior research on physiologically-
 controlled games use indirect control," and "these games demonstrate how physiological input is not directly controlled, but mediated by some other player interaction, such as meditation or deep breathing," (Nacke et al. 2011).
-
-
+</br>
+</br>
 
 <figure>
   <center><img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092"></center>
