@@ -35,7 +35,7 @@ controlled games use indirect control," and "these games demonstrate how physiol
 
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092">
-<p align ="center">Fig. 2 - *Mindball Play* 2018. A game that uses an EEG headband to control a ball using brainwave-determined "focus"</p>
+<p align ="center">Fig. 2 - <i>Mindball Play</i> 2018. A game that uses an EEG headband to control a ball using brainwave-determined "focus."</p>
   
 &nbsp;
 
@@ -43,7 +43,7 @@ In another study on the use of biofeedback in games to learn paced breathing, th
  
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5">
-<p align ="center">Fig. 3 - *DEEP VR* 2021. A game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
+<p align ="center">Fig. 3 - <i>DEEP VR</i> 2021. A game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
     that senses player's breathing.</p>
 
   
