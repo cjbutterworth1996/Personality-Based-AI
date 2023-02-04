@@ -32,7 +32,7 @@ controlled games use indirect control," and "these games demonstrate how physiol
   <center><img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092"></center>
   <center><figcaption>Fig. 1 - *Mindball Play*, a game that uses an EEG headband to control a ball using brainwave-determined "focus" levels.</figcaption></center>
   
-&nbsp:
+&nbsp;
 
 In another study on the use of biofeedback in games to learn paced breathing, the authors found that biofeedback augmentation "led to better breath control during play," proving that biofeedback augmented gaming can successfully influence biofeedback metrics, at least in a calming manner (Zafar 2020). Conversely, this artefact will attempt to prove that AI using biofeedback is also capable of inducing higher arousal states in the player.
  
