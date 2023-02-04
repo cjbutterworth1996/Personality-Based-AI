@@ -17,7 +17,7 @@ Reinforcement learning trains AI by programming it to maximize a reward function
 
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/08ca57b4-3d0c-4178-800a-787526a2994b">
-<p align ="center">Fig. 1 - The results of an AI learning to play a version of a snake game using reinforcement learning.</p>
+<p align ="center">Fig. 1 - The results of an AI learning to play a version of a snake game using reinforcement learning. Graph generated using TensorBoard.</p>
 
 &nbsp;
 
@@ -61,11 +61,7 @@ Using practice-based research, this artefact will determine if the AI is more ef
 
 # Bibliography
 
-*DEEP VR*. 2021. Explore DEEP, Explore DEEP.
-
 GAMEJOLT. 2014.'VANISH by 3DrunkMen'. Available at: https://gamejolt.com/games/vanish/29440 [accessed 2 February 2023].
-
-*Mindball Play*. 2018. Mentalytics Team, Mentalytics AB.
 
 NACKE, Lennart, Michael KALYN, Calvin LOUGH and Regan MANDRYK. 2011. 'Biofeedback Game Design: Using Direct and Indirect Physiological Control to Enhance Game Interaction'. Paper presented at the internation conference on *Human Factors in Computing Systems*. Vancouver, Canada, 7-12 May 2011. Available at: https://www.researchgate.net/publication/221518632_Biofeedback_Game_Design_Using_Direct_and_Indirect_Physiological_Control_to_Enhance_Game_Interaction [accessed 2 February 2013].
 
@@ -83,4 +79,8 @@ ZAFAR, M. Abdullah, Beena AHMED, Rami Al RIHAWI and Ricardo GUTIERREZ-OSUNA. 202
 
 # Appendix - Figures
 
-Figure 1.  
+Figure 1. GUSZEJNOV, Dávid. 2022. 'How to Train an AI to Play Any Game'. *Towards Data Science* [online]. Available at: https://towardsdatascience.com/how-to-train-an-ai-to-play-any-game-f1489f3bc5c [accessed 4 February 2023].
+
+Figure 2. *Mindball Play*. 2018. Mentalytics Team, Mentalytics AB.
+
+Figure 3. *DEEP VR*. 2021. Explore DEEP, Explore DEEP.
