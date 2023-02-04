@@ -27,6 +27,12 @@ Given the limited control of the director AI, there will only need to be one key
 
 The game developers for *VANISH* (2013) attempted to determine if "biofeedback-enabled adaptive methods have a significant impact on any specific aspect of the players' gameplay experience," (Nogueira et al. 2016).  The study used heartrate, skin conductivity, and facial electromyography to alter game generation. Their study concluded that "biofeedback-augmented gameplay is suitable as both a dramatic enhancer and a regulator of the player experience," (Nogueira et al. 2016).
 
+&nbsp;
+<img src ="https://media.github.falmouth.ac.uk/user/748/files/2effdf51-c824-42b9-91be-2dee2ad92e27">
+<p align ="center">Fig. 2 - <i>VANISH</i> 2013. A game that uses procedurally generated scare tactics.</p>
+
+&nbsp;
+
 The biggest issue with this study is that they do not explain why they chose certain physiological inputs to affect specific aspects of gameplay. For example, there is no explanation given for why valence was attached to monster generations instead of arousal.
 
 
@@ -35,7 +41,7 @@ controlled games use indirect control," and "these games demonstrate how physiol
 
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092">
-<p align ="center">Fig. 2 - <i>Mindball Play</i> 2018. A game that uses an EEG headband to control a ball using brainwave-determined "focus."</p>
+<p align ="center">Fig. 3 - <i>Mindball Play</i> 2018. A game that uses an EEG headband to control a ball using brainwave-determined "focus."</p>
   
 &nbsp;
 
@@ -43,7 +49,7 @@ In another study on the use of biofeedback in games to learn paced breathing, th
  
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5">
-<p align ="center">Fig. 3 - <i>DEEP VR</i> 2021. A game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
+<p align ="center">Fig. 4 - <i>DEEP VR</i> 2021. A game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
     that senses player's breathing.</p>
 
   
@@ -81,6 +87,8 @@ ZAFAR, M. Abdullah, Beena AHMED, Rami Al RIHAWI and Ricardo GUTIERREZ-OSUNA. 202
 
 Figure 1. GUSZEJNOV, Dávid. 2022. 'How to Train an AI to Play Any Game'. *Towards Data Science* [online]. Available at: https://towardsdatascience.com/how-to-train-an-ai-to-play-any-game-f1489f3bc5c [accessed 4 February 2023].
 
-Figure 2. *Mindball Play*. 2018. Mentalytics Team, Mentalytics AB.
+Figure 2. *VANISH*. 2014. 3DrunkMen, 3DrunkMen.
 
-Figure 3. *DEEP VR*. 2021. Explore DEEP, Explore DEEP.
+Figure 3. *Mindball Play*. 2018. Mentalytics Team, Mentalytics AB.
+
+Figure 4. *DEEP VR*. 2021. Explore DEEP, Explore DEEP.
