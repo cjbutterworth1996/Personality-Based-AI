@@ -31,6 +31,7 @@ controlled games use indirect control," and "these games demonstrate how physiol
 <figure>
   <center><img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092"></center>
   <center><figcaption>Fig. 1 - *Mindball Play*, a game that uses an EEG headband to control a ball using brainwave-determined "focus" levels.</figcaption></center>
+  
 &nbsp:
 
 In another study on the use of biofeedback in games to learn paced breathing, the authors found that biofeedback augmentation "led to better breath control during play," proving that biofeedback augmented gaming can successfully influence biofeedback metrics, at least in a calming manner (Zafar 2020). Conversely, this artefact will attempt to prove that AI using biofeedback is also capable of inducing higher arousal states in the player.
@@ -41,8 +42,9 @@ In another study on the use of biofeedback in games to learn paced breathing, th
   <center><figcaption>Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
     that senses player's breathing.</figcaption></center>
 </figure>
-&nbsp;
 
+  
+&nbsp;
 ## Production Timeline
 
 There are six weeks of production time pending the approval of this proposal. Using AGILE as a development life cycle model, the first week will consist of research and planning the software's architecture. Weeks two through four will be spent developing and testing the software using user feedback along the way to optimize the experience. Weeks five and six will consist of training the AI and polishing to assure the AI has enough training time to produce meaningful results. The AI will be completed as soon as possible with the game world and game elements following thereafter.
