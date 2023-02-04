@@ -26,10 +26,13 @@ The biggest issue with this study is that they do not explain why they chose cer
 A study done on physiological controls in gaming claims "most examples of prior research on physiologically-
 controlled games use indirect control," and "these games demonstrate how physiological input is not directly controlled, but mediated by some other player interaction, such as meditation or deep breathing," (Nacke et al. 2011).
 
+<center><img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092"></center>
+<center>Fig. 1 - *Mindball Play*, a game that uses an EEG headband to control a ball using brainwave-determined "focus" levels.</center>
+
 In another study on the use of biofeedback in games to learn paced breathing, the authors found that biofeedback augmentation "led to better breath control during play," proving that biofeedback augmented gaming can successfully influence biofeedback metrics, at least in a calming manner (Zafar 2020). Conversely, this artefact will attempt to prove that AI using biofeedback is also capable of inducing higher arousal states in the player.
 
 <center><img src ="https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5"></center>
-<center>Fig. 1 - *DEEP VR* a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band that senses player's breathing.</center>
+<center>Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band that senses player's breathing.</center>
 
 ## Production Timeline
 
@@ -44,9 +47,11 @@ Using practice-based research, this artefact will determine if the AI is more ef
 
 # Bibliography
 
-*DEEP VR*. 2021. Explore DEEP.
+*DEEP VR*. 2021. Explore DEEP, Explore DEEP.
 
 GAMEJOLT. 2014.'VANISH by 3DrunkMen'. Available at: https://gamejolt.com/games/vanish/29440 [accessed 2 February 2023].
+
+*Mindball Play*. 2018. Mentalytics Team, Mentalytics AB.
 
 NACKE, Lennart, Michael KALYN, Calvin LOUGH and Regan MANDRYK. 2011. 'Biofeedback Game Design: Using Direct and Indirect Physiological Control to Enhance Game Interaction'. Paper presented at the internation conference on *Human Factors in Computing Systems*. Vancouver, Canada, 7-12 May 2011. Available at: https://www.researchgate.net/publication/221518632_Biofeedback_Game_Design_Using_Direct_and_Indirect_Physiological_Control_to_Enhance_Game_Interaction [accessed 2 February 2013].
 
@@ -58,6 +63,6 @@ SARKER, I.H. 2021. 'Machine Learning: Algorithms, Real-World Applications and Re
 
 STABLE-BASELINES3. 'Stable-Baselines3 Docs - Reliable Reinforcement Learning Implementations'. Available at: https://stable-baselines3.readthedocs.io/en/master/ [accessed 2 February 2023].
 
-*VANISH*. 2014. 3DrunkMen.
+*VANISH*. 2014. 3DrunkMen, 3DrunkMen.
 
 ZAFAR, M. Abdullah, Beena AHMED, Rami Al RIHAWI and Ricardo GUTIERREZ-OSUNA. 2020. 'Gaming Away Stress: Using Biofeedback Games to Learn Paced Breathing". *IEEE Transactions on Affective Computing*, 11(3), 519-531.
