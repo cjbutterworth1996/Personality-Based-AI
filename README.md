@@ -35,8 +35,8 @@ In another study on the use of biofeedback in games to learn paced breathing, th
 
 <figure>
   <center><img src ="https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5"></center>
-  <center><figcaption>Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
-    that senses player's breathing.</figcaption></center>
+  <figcaption>Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
+    that senses player's breathing.</figcaption>
 </figure>
 
 
