@@ -15,6 +15,12 @@ The parameters that the AI will be trained to optimize are:
 
 Reinforcement learning trains AI by programming it to maximize a reward function. It is used to "automatically evaluate the optimal behavior in a particular context or environment to improve its efficiency," (Sarker 2021). This makes it an ideal candidate for this project, as it aims to optimize the AI's efficiency of heigtening  the player's heartrate. 
 
+&nbsp;
+<img src ="https://media.github.falmouth.ac.uk/user/748/files/08ca57b4-3d0c-4178-800a-787526a2994b">
+<p align ="center">Fig. 1 - The results of an AI learning to play a version of a snake game using reinforcement learning.</p>
+
+&nbsp;
+
 Given the limited control of the director AI, there will only need to be one key class, GAME, that represents the game variables the AI will interact with. Within the game itself, there will also be a MONSTER class with different subclasses for each monster type, as well as a PLAYER class for the player character.
 
 ## Similar Projects
@@ -29,7 +35,7 @@ controlled games use indirect control," and "these games demonstrate how physiol
 
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092">
-<p align="center">Fig. 1 - *Mindball Play*, a game that uses an EEG headband to control a ball using brainwave-determined "focus"</p>
+<p align ="center">Fig. 1 - *Mindball Play*, a game that uses an EEG headband to control a ball using brainwave-determined "focus"</p>
   
 &nbsp;
 
@@ -37,7 +43,7 @@ In another study on the use of biofeedback in games to learn paced breathing, th
  
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5">
-<p align="center">Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
+<p align ="center">Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
     that senses player's breathing.</p>
 
   
@@ -74,3 +80,7 @@ STABLE-BASELINES3. 'Stable-Baselines3 Docs - Reliable Reinforcement Learning Imp
 *VANISH*. 2014. 3DrunkMen, 3DrunkMen.
 
 ZAFAR, M. Abdullah, Beena AHMED, Rami Al RIHAWI and Ricardo GUTIERREZ-OSUNA. 2020. 'Gaming Away Stress: Using Biofeedback Games to Learn Paced Breathing". *IEEE Transactions on Affective Computing*, 11(3), 519-531.
+
+# Appendix - Figures
+
+Figure 1.  
