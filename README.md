@@ -28,6 +28,9 @@ controlled games use indirect control," and "these games demonstrate how physiol
 
 In another study on the use of biofeedback in games to learn paced breathing, the authors found that biofeedback augmentation "led to better breath control during play," proving that biofeedback augmented gaming can successfully influence biofeedback metrics, at least in a calming manner (Zafar 2020). Conversely, this artefact will attempt to prove that AI using biofeedback is also capable of inducing higher arousal states in the player.
 
+<center><img src ="![DEEPVR](https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5)"></center>
+<center>Fig. 1 - *DEEP VR* a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band that senses player's breathing.</center>
+
 ## Production Timeline
 
 There are six weeks of production time pending the approval of this proposal. Using AGILE as a development life cycle model, the first week will consist of research and planning the software's architecture. Weeks two through four will be spent developing and testing the software using user feedback along the way to optimize the experience. Weeks five and six will consist of training the AI and polishing to assure the AI has enough training time to produce meaningful results. The AI will be completed as soon as possible with the game world and game elements following thereafter.
@@ -40,6 +43,8 @@ This artefact will use PyTorch, which provides "scalable distributed training an
 Using practice-based research, this artefact will determine if the AI is more effective at producing a higher arousal response in players than a similar, scripted experience. This research will determine output effectiveness primarily and objectively via heartrate fluctuations as well as secondarily and subjectively via player questionnaires. Additional testing methods such as an increased number of physiological inputs, simulations of different types of fear, and varying recognition pattern testing would all increase the relevancy and validity of the project's data, but fall outside the current scope due to time limitations.
 
 # Bibliography
+
+*DEEP VR*. 2021. Explore DEEP.
 
 GAMEJOLT. 2014.'VANISH by 3DrunkMen'. Available at: https://gamejolt.com/games/vanish/29440 [accessed 2 February 2023].
 
