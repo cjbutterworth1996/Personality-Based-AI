@@ -1,11 +1,11 @@
 # COMP250 Proposal: Nightmare Labyrinth
 
 ## Introduction
-This game is a procedurally generated maze which players have to navigate while avoiding enemies. Players will use a pulse monitor that allows the AI director to detect gameplay patterns that result in fluctuations in heartrate. Based on these findings, the AI will alter the generation of the maze and enemy spawning to attempt to increase the player's heartrate. My chosen specialism is artificial intelligence in games programming. This project is in alignment with that specialization because the AI director will use machine learning to optimize procedural generation. This artefact could be used in several different fields. An AI that can recognize emotional arousal states and then effectively respond to influence those states could optimize emotional responses in video games, strengthen lie detector equipment, and optimize anxiety-reduction software among other things.
+This artefact is a procedurally generated maze which players have to navigate while avoiding enemies. Players will use a pulse monitor that allows the AI director to detect gameplay patterns that result in fluctuations in heartrate. Based on these findings, the AI will alter the generation of the maze and enemy spawning to attempt to increase the player's heartrate. My chosen specialism is artificial intelligence in games programming. This project is in alignment with that specialization because the AI director will use machine learning to optimize procedural generation. This artefact could be used in several different fields. An AI that can recognize emotional arousal states and then effectively respond to influence those states could optimize emotional responses in video games, strengthen lie detector equipment, and optimize anxiety-reduction software among other things.
 
 ## Project Outline
 
-The artefact will use reinforcement learning to train an AI to consistently generate higher arousal responses. The artefact will consist of a procedurally generated maze and 3 types of AI controlled enemies. The player will be hooked up to a finger-strap style pulse monitor to let the AI determine the player's heartrate.
+The artefact will use reinforcement learning to train an AI to consistently generate higher arousal responses. The artefact will consist of a procedurally generated maze and 3 types of AI controlled enemies. There will also be a control group using a similar, scripted game that does not use the AI director. The player will be hooked up to a finger-strap style pulse monitor to let the AI determine the player's heartrate.
 
 The parameters that the AI will be trained to optimize are:
 1. How long it should wait between enemy spawns
@@ -13,7 +13,7 @@ The parameters that the AI will be trained to optimize are:
 
 ## Software Architecture
 
-Reinforcement learning trains AI by programming it to maximize a reward function. It is used to "automatically evaluate the optimal behavior in a particular context or environment to improve its efficiency," (Sarker 2021). This makes it an ideal candidate for this project, as it aims to optimize the AI's efficiency of heigtening  the player's heartrate. 
+Reinforcement learning trains AI by programming it to maximize a reward function. It is used to "automatically evaluate the optimal behavior in a particular context or environment to improve its efficiency," (Sarker 2021). This makes it an ideal candidate for this project, as it aims to optimize the AI's efficiency of heigtening the player's heartrate. 
 
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/08ca57b4-3d0c-4178-800a-787526a2994b">
@@ -21,7 +21,7 @@ Reinforcement learning trains AI by programming it to maximize a reward function
 
 &nbsp;
 
-Given the limited control of the director AI, there will only need to be one key class, GAME, that represents the game variables the AI will interact with. Within the game itself, there will also be a MONSTER class with different subclasses for each monster type, as well as a PLAYER class for the player character.
+Given the limited control of the AI director, there will only need to be one key class, GAME, that represents the game variables the AI will interact with. Within the game itself, there will also be a MONSTER class with different subclasses for each monster type, as well as a PLAYER class for the player character.
 
 ## Similar Projects
 
@@ -29,19 +29,18 @@ The game developers for *VANISH* (2013) attempted to determine if "biofeedback-e
 
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/2effdf51-c824-42b9-91be-2dee2ad92e27">
-<p align ="center">Fig. 2 - <i>VANISH</i> 2013. A game that uses procedurally generated scare tactics.</p>
+<p align ="center">Fig. 2 - <i>VANISH</i> 2013. A game that uses procedurally generation to scare players.</p>
 
 &nbsp;
 
 The biggest issue with this study is that they do not explain why they chose certain physiological inputs to affect specific aspects of gameplay. For example, there is no explanation given for why valence was attached to monster generations instead of arousal.
 
 
-A study done on physiological controls in gaming claims "most examples of prior research on physiologically-
-controlled games use indirect control," and "these games demonstrate how physiological input is not directly controlled, but mediated by some other player interaction, such as meditation or deep breathing," (Nacke et al. 2011).
+A study done on physiological controls in gaming claims "most examples of prior research on physiologically-controlled games use indirect control," and "these games demonstrate how physiological input is not directly controlled, but mediated by some other player interaction, such as meditation or deep breathing," (Nacke et al. 2011).
 
 &nbsp;
 <img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092">
-<p align ="center">Fig. 3 - <i>Mindball Play</i> 2018. A game that uses an EEG headband to control a ball using brainwave-determined "focus."</p>
+<p align ="center">Fig. 3 - <i>Mindball Play</i> 2018. A game that uses an EEG headband to control a ball's speed using brainwave-determined "focus."</p>
   
 &nbsp;
 
@@ -55,14 +54,14 @@ In another study on the use of biofeedback in games to learn paced breathing, th
 &nbsp;
 ## Production Timeline
 
-There are six weeks of production time pending the approval of this proposal. Using AGILE as a development life cycle model, the first week will consist of research and planning the software's architecture. Weeks two through four will be spent developing and testing the software using user feedback along the way to optimize the experience. Weeks five and six will consist of training the AI and polishing to assure the AI has enough training time to produce meaningful results. The AI will be completed as soon as possible with the game world and game elements following thereafter.
+There are six weeks of production time pending the approval of this proposal. Using AGILE as a development life cycle model, the first week will consist of research and planning the software's architecture. Weeks two through four will be spent developing and testing the software using user feedback along the way to optimize the experience. Weeks five and six will consist of training the AI and polishing to assure the AI has enough training time to produce meaningful results. The AI will be completed first with game elements following thereafter.
 
 ## Scope Feasibility
-This artefact will use PyTorch, which provides "scalable distributed training and performance optimization in research and production," and integrates directly into Unity (PyTorch). Additionally, I will be using a standardized library that uses PyTorch called Stable-Baselines3, which is "a set of reliable implementations of reinforcement learning algorithms in PyTorch," (Stable-Baselines3 2022). Using these two tools will allow me to produce an effective AI using reinforcement learning within the time scope of this project.
+This artefact will use PyTorch, which provides "scalable distributed training and performance optimization in research and production," and integrates directly into Unity (PyTorch). Additionally, the artefact will use a standardized library called Stable-Baselines3, which is "a set of reliable implementations of reinforcement learning algorithms in PyTorch," (Stable-Baselines3 2022). These two tools will ensure production of an effective AI within the time scope of this project.
 
 ## Research Methods
 
-Using practice-based research, this artefact will determine if the AI is more effective at producing a higher arousal response in players than a similar, scripted experience. This research will determine output effectiveness primarily and objectively via heartrate fluctuations as well as secondarily and subjectively via player questionnaires. Additional testing methods such as an increased number of physiological inputs, simulations of different types of fear, and varying recognition pattern testing would all increase the relevancy and validity of the project's data, but fall outside the current scope due to time limitations.
+Using practice-based research, this artefact will determine if the AI is more effective at producing a higher arousal response in players than a similar, scripted experience. This research will determine effectiveness primarily and objectively via heartrate fluctuations as well as secondarily and subjectively via questionnaires. Additional testing such as an increased number of physiological inputs, simulations of different types of fear, and varying recognition pattern testing would all increase the relevancy and validity of the project's data, but fall outside the current scope due to time limitations.
 
 # Bibliography
 
