@@ -33,9 +33,11 @@ controlled games use indirect control," and "these games demonstrate how physiol
 
 In another study on the use of biofeedback in games to learn paced breathing, the authors found that biofeedback augmentation "led to better breath control during play," proving that biofeedback augmented gaming can successfully influence biofeedback metrics, at least in a calming manner (Zafar 2020). Conversely, this artefact will attempt to prove that AI using biofeedback is also capable of inducing higher arousal states in the player.
 
-
-<center><img src ="https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5"></center>
-<center><h4>Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band that senses player's breathing.</h4></center>
+<figure>
+  <center><img src ="https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5"></center>
+  <center><figcaption>Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band
+    that senses player's breathing.</figcaption></center>
+</figure>
 
 
 ## Production Timeline
