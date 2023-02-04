@@ -26,13 +26,17 @@ The biggest issue with this study is that they do not explain why they chose cer
 A study done on physiological controls in gaming claims "most examples of prior research on physiologically-
 controlled games use indirect control," and "these games demonstrate how physiological input is not directly controlled, but mediated by some other player interaction, such as meditation or deep breathing," (Nacke et al. 2011).
 
+
 <center><img src ="https://media.github.falmouth.ac.uk/user/748/files/73d443a0-2307-49f4-9eca-07f016ff8092"></center>
-<center>Fig. 1 - *Mindball Play*, a game that uses an EEG headband to control a ball using brainwave-determined "focus" levels.</center>
+<center><h4>Fig. 1 - *Mindball Play*, a game that uses an EEG headband to control a ball using brainwave-determined "focus" levels.</h4></center>
+
 
 In another study on the use of biofeedback in games to learn paced breathing, the authors found that biofeedback augmentation "led to better breath control during play," proving that biofeedback augmented gaming can successfully influence biofeedback metrics, at least in a calming manner (Zafar 2020). Conversely, this artefact will attempt to prove that AI using biofeedback is also capable of inducing higher arousal states in the player.
 
+
 <center><img src ="https://media.github.falmouth.ac.uk/user/748/files/fb89f6b1-958e-4713-b016-30755c738eb5"></center>
-<center>Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band that senses player's breathing.</center>
+<center><h4>Fig. 2 - *DEEP VR*, a game that teaches controlled breathing techniques and helps to relieve anxiety using a biofeedback-enabled diagphragm band that senses player's breathing.</h4></center>
+
 
 ## Production Timeline
 
