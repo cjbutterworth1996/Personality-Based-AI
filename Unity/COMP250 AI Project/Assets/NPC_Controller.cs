@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class NPC_Controller : MonoBehaviour
 {
-    public class Needs
-    {
-        public float thirst = 100f;
-        public float hunger = 100f;
-        public float bladder = 100f;
-        public float energy = 100f;
-    }
+    [SerializeField]
+    public int thirst = 100;
+    public int hunger = 100;
+    public int bladder = 100;
+    public int energy = 100;
+    public int boredom = 100;
 
-    public class Happiness
+    void Start ()
     {
-        public float boredom = 100f;
+        this.enabled = true;
     }
 }
