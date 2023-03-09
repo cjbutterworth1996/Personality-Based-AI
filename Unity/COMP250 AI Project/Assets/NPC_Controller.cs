@@ -6,11 +6,11 @@ using UnityEngine;
 public class NPC_Controller : MonoBehaviour
 {
     [SerializeField]
-    public int thirst = 100;
-    public int hunger = 100;
-    public int bladder = 100;
-    public int energy = 100;
-    public int boredom = 100;
+    public int thirst;
+    public int hunger;
+    public int bladder;
+    public int energy;
+    public int boredom;
 
     void Start ()
     {
