@@ -23,10 +23,4 @@ public class StationController : MonoBehaviour
             Instantiate(sinkPrefab, toiletArray[i].position, toiletArray[i].rotation);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
