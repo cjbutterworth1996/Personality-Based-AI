@@ -16,4 +16,9 @@ public class NPC_Controller : MonoBehaviour
     {
         this.enabled = true;
     }
+
+    void Drink()
+    {
+        target = sink.transform;
+    }
 }
