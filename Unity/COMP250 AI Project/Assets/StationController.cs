@@ -6,10 +6,13 @@ public class StationController : MonoBehaviour
 {
     public GameObject sinkPrefab;
     public GameObject toiletPrefab;
+    public GameObject bedPrefab;
     public int numberOfSinks;
     public int numberOfToilets;
+    public int numberOfBeds;
     public Transform[] sinkArray;
     public Transform[] toiletArray;
+    public Transform[] bedArray;
 
     // Start is called before the first frame update
     private void Start()
@@ -21,6 +24,10 @@ public class StationController : MonoBehaviour
         for (int i = 0; i < numberOfToilets; i++)
         {
             Instantiate(toiletPrefab, toiletArray[i].position, toiletArray[i].rotation);
+        }
+        for (int i = 0; i < numberOfBeds; i++)
+        {
+            Instantiate(bedPrefab, bedArray[i].position, bedArray[i].rotation);
         }
     }
 }
