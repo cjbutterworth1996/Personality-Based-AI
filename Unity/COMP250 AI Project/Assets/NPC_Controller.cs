@@ -25,12 +25,14 @@ public class NPC_Controller : MonoBehaviour
         this.enabled = true;
     }
 
-    void Update()
+    // This increases the Thirst value by determining the nearest Sink GameObject and then moving to it. A collision sphere then triggers the Drink function.
+    void SlateThirst()
     {
         distanceToNearestStation = Mathf.Infinity;
         target = "Sink";
         GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
 
+        // Determines what the nearest Sink GameObject is
         foreach (GameObject targetObject in targetObjects)
         {
             distance = Vector3.Distance(transform.position, targetObject.transform.position);
