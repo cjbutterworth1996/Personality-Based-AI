@@ -229,11 +229,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3359753422427410106, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint
+      value: Sink Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -504,18 +504,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4faf1f71308039e4f9c13bf8de5797b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bedPrefab: {fileID: 5275763615884882397, guid: 3cba5f4c454554b46829e3bbfac67993, type: 3}
+  fridgePrefab: {fileID: 4558540695382726495, guid: 93364117aba616c49861bbd441c70601, type: 3}
   sinkPrefab: {fileID: 8431365205604271468, guid: 40dcd087e1921784f882e41fb3184f58, type: 3}
   toiletPrefab: {fileID: 636771433035190290, guid: b22f1d9ddf55ca54c82fdb226f8cbad5, type: 3}
-  bedPrefab: {fileID: 5275763615884882397, guid: 3cba5f4c454554b46829e3bbfac67993, type: 3}
+  numberOfBeds: 1
+  numberOfFridges: 1
   numberOfSinks: 1
   numberOfToilets: 1
-  numberOfBeds: 1
+  bedArray:
+  - {fileID: 1750389970}
+  fridgeArray:
+  - {fileID: 1444622025}
   sinkArray:
   - {fileID: 581957512}
   toiletArray:
   - {fileID: 1754020589}
-  bedArray:
-  - {fileID: 1750389970}
+--- !u!1001 &1444622024
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3359753422427410106, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_Name
+      value: Fridge Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+--- !u!4 &1444622025 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
+  m_PrefabInstance: {fileID: 1444622024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1525934159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -525,11 +591,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3359753422427410106, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint (2)
+      value: Bed Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_LocalScale.z
@@ -672,11 +738,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3359753422427410106, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint (1)
+      value: Toilet Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7170071712786350203, guid: aca66fe33b214164c96ac6c6a462270a, type: 3}
       propertyPath: m_LocalPosition.x
