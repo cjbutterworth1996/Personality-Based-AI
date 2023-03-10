@@ -20,7 +20,7 @@ public class StationController : MonoBehaviour
         }
         for (int i = 0; i < numberOfToilets; i++)
         {
-            Instantiate(sinkPrefab, toiletArray[i].position, toiletArray[i].rotation);
+            Instantiate(toiletPrefab, toiletArray[i].position, toiletArray[i].rotation);
         }
     }
 }
