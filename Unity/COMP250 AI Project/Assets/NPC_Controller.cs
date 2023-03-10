@@ -25,10 +25,10 @@ public class NPC_Controller : MonoBehaviour
         this.enabled = true;
     }
 
-    void Drink()
+    void Update()
     {
         distanceToNearestStation = Mathf.Infinity;
-        target = "sink";
+        target = "Sink";
         GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
 
         foreach (GameObject targetObject in targetObjects)

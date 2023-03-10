@@ -487,6 +487,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4417651994320402329, guid: 15396273d62549b4aa377d7f476f44f8, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4417651994320402329, guid: 15396273d62549b4aa377d7f476f44f8, type: 3}
+      propertyPath: energy
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -4417651994320402329, guid: 15396273d62549b4aa377d7f476f44f8, type: 3}
+      propertyPath: hunger
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -4417651994320402329, guid: 15396273d62549b4aa377d7f476f44f8, type: 3}
+      propertyPath: thirst
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -4417651994320402329, guid: 15396273d62549b4aa377d7f476f44f8, type: 3}
+      propertyPath: bladder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -4417651994320402329, guid: 15396273d62549b4aa377d7f476f44f8, type: 3}
+      propertyPath: boredom
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4034372360890504881, guid: 15396273d62549b4aa377d7f476f44f8, type: 3}
       propertyPath: m_Name
       value: Basic NPC
