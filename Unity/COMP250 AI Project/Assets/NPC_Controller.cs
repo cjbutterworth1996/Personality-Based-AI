@@ -30,7 +30,7 @@ public class NPC_Controller : MonoBehaviour
     // The NPC drinks to slate their thirst.
     public IEnumerator Drink()
     {
-        timeInSeconds = 3;
+        timeInSeconds = 1;
 
         if (withinRangeOfTarget)
         {
@@ -63,7 +63,7 @@ public class NPC_Controller : MonoBehaviour
     // The NPC uses the toilet to empty their bladder.
     public IEnumerator EmptyBladder()
     {
-        timeInSeconds = 5;
+        timeInSeconds = 2;
 
         if (withinRangeOfTarget)
         {
