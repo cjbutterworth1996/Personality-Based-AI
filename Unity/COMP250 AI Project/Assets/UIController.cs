@@ -54,4 +54,9 @@ public class UIController : MonoBehaviour
     {
         thirstBar.value = updateAmount;
     }
+
+    public void UpdateMoney(int updateAmount)
+    {
+        moneyCounter.text = "Money: " + updateAmount.ToString();
+    }
 }
