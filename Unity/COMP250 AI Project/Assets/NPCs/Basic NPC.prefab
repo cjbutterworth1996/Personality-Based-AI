@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4417651994320402329}
   m_Layer: 0
   m_Name: Basic NPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +60,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f3015ec1bfd0e4494d5d1acec9b76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bladder: 0
+  boredom: 0
+  energy: 0
+  hunger: 0
+  money: 0
+  thirst: 0
+  target: 
+  speed: 0
+  withinRangeOfTarget: 0
+  timeInSeconds: 0
 --- !u!1 &5490022472693039699
 GameObject:
   m_ObjectHideFlags: 0

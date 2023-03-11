@@ -10,6 +10,7 @@ TagManager:
   - Fridge
   - Computer
   - TV
+  - NPC
   layers:
   - Default
   - TransparentFX
