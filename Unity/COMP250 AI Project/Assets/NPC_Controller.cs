@@ -6,11 +6,12 @@ using UnityEngine;
 public class NPC_Controller : MonoBehaviour
 {
     [SerializeField]
-    public int thirst;
-    public int hunger;
     public int bladder;
-    public int energy;
     public int boredom;
+    public int energy;
+    public int hunger;
+    public int money;
+    public int thirst;
 
     public string target;
     public float speed;
@@ -20,7 +21,6 @@ public class NPC_Controller : MonoBehaviour
     GameObject closestTarget = null;
     public bool withinRangeOfTarget = false;
     public int timeInSeconds;
-
 
     void Start ()
     {
@@ -43,6 +43,7 @@ public class NPC_Controller : MonoBehaviour
         }
     }
 
+    // The NPC eats to slate their hunger.
     public IEnumerator Eat()
     {
         timeInSeconds = 10;
@@ -50,6 +51,7 @@ public class NPC_Controller : MonoBehaviour
         if (withinRangeOfTarget)
         {
             hunger += 100;
+            money -= 10;
             if (hunger > 100)
             {
                 hunger = 100;
@@ -58,6 +60,7 @@ public class NPC_Controller : MonoBehaviour
         }
     }
 
+    // The NPC uses the toilet to empty their bladder.
     public IEnumerator EmptyBladder()
     {
         timeInSeconds = 5;
@@ -73,62 +76,58 @@ public class NPC_Controller : MonoBehaviour
         }
     }
 
-    void SlateBladder()
+    // The NPC uses the bed to refill their energy.
+    public IEnumerator Sleep()
     {
-        distanceToNearestStation = Mathf.Infinity;
-        target = "Toilet";
-        GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
+        timeInSeconds = 80;
 
-        // Determines what the nearest Toilet GameObject is
-        foreach (GameObject targetObject in targetObjects)
+        if (withinRangeOfTarget)
         {
-            distance = Vector3.Distance(transform.position, targetObject.transform.position);
-
-            if (distance < distanceToNearestStation)
+            energy += 100;
+            money -= 20;
+            if (energy > 100)
             {
-                distanceToNearestStation = distance;
-                closestTarget = targetObject;
+                energy = 100;
             }
-        }
-
-        if (closestTarget != null)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
+            yield return new WaitForSeconds(timeInSeconds);
         }
     }
 
-    void SlateHunger()
+    public IEnumerator WatchTv()
     {
-        distanceToNearestStation = Mathf.Infinity;
-        target = "Fridge";
-        GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
+        timeInSeconds = 10;
 
-        // Determines what the nearest Fridge GameObject is
-        foreach (GameObject targetObject in targetObjects)
+        if (withinRangeOfTarget)
         {
-            distance = Vector3.Distance(transform.position, targetObject.transform.position);
-
-            if (distance < distanceToNearestStation)
+            boredom += 50;
+            money -= 5;
+            if (boredom > 100)
             {
-                distanceToNearestStation = distance;
-                closestTarget = targetObject;
+                boredom = 100;
             }
-        }
-
-        if (closestTarget != null)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
+            yield return new WaitForSeconds(timeInSeconds);
         }
     }
 
-    // This increases the Thirst value by determining the nearest Sink GameObject and then moving to it. A collision sphere then triggers the Drink function.
-    void SlateThirst()
+    // The NPC uses the computer to earn money.
+    public IEnumerator Work()
+    {
+        timeInSeconds = 10;
+
+        if (withinRangeOfTarget)
+        {
+            money += 10;
+            yield return new WaitForSeconds(timeInSeconds);
+        }
+    }
+
+    // The NPC moves to the nearest targeted station.
+    void MoveToTarget()
     {
         distanceToNearestStation = Mathf.Infinity;
-        target = "Sink";
         GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
 
-        // Determines what the nearest Sink GameObject is
+        // Determines what the nearest targeted GameObject is
         foreach (GameObject targetObject in targetObjects)
         {
             distance = Vector3.Distance(transform.position, targetObject.transform.position);
