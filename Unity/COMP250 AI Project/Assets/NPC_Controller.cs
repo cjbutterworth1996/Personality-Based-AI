@@ -50,11 +50,50 @@ public class NPC_Controller : MonoBehaviour
         if (withinRangeOfTarget)
         {
             hunger += 100;
-            if (hunger> 100)
+            if (hunger > 100)
             {
                 hunger = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
+        }
+    }
+
+    public IEnumerator EmptyBladder()
+    {
+        timeInSeconds = 5;
+
+        if (withinRangeOfTarget)
+        {
+            bladder += 100;
+            if (bladder > 100)
+            {
+                bladder = 100;
+            }
+            yield return new WaitForSeconds(timeInSeconds);
+        }
+    }
+
+    void SlateBladder()
+    {
+        distanceToNearestStation = Mathf.Infinity;
+        target = "Toilet";
+        GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
+
+        // Determines what the nearest Toilet GameObject is
+        foreach (GameObject targetObject in targetObjects)
+        {
+            distance = Vector3.Distance(transform.position, targetObject.transform.position);
+
+            if (distance < distanceToNearestStation)
+            {
+                distanceToNearestStation = distance;
+                closestTarget = targetObject;
+            }
+        }
+
+        if (closestTarget != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
         }
     }
 
