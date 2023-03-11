@@ -18,11 +18,25 @@ public class NPC_Controller : MonoBehaviour
     float distance;
     GameObject[] targetObjects;
     GameObject closestTarget = null;
+    public bool withinRangeOfTarget = false;
+    public int timeInSeconds;
 
 
     void Start ()
     {
         this.enabled = true;
+    }
+
+    // The NPC drinks to slate their thirst.
+    public IEnumerator Drink ()
+    {
+        timeInSeconds = 3;
+
+        if (withinRangeOfTarget)
+        {
+            thirst += 10;
+            yield return new WaitForSeconds(timeInSeconds);
+        }
     }
 
     // This increases the Thirst value by determining the nearest Sink GameObject and then moving to it. A collision sphere then triggers the Drink function.
