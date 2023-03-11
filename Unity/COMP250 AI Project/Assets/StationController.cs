@@ -5,17 +5,23 @@ using UnityEngine;
 public class StationController : MonoBehaviour
 {
 	public GameObject bedPrefab;
+	public GameObject computerPrefab;
 	public GameObject fridgePrefab;
 	public GameObject sinkPrefab;
 	public GameObject toiletPrefab;
+	public GameObject tvPrefab;
 	public int numberOfBeds;
+	public int numberOfComputers;
 	public int numberOfFridges;
 	public int numberOfSinks;
 	public int numberOfToilets;
+	public int numberOfTvs;
 	public Transform[] bedArray;
+	public Transform[] computerArray;
 	public Transform[] fridgeArray;
 	public Transform[] sinkArray;
 	public Transform[] toiletArray;
+	public Transform[] tvArray;
 
 	// Start is called before the first frame update
 	private void Start()
@@ -23,6 +29,10 @@ public class StationController : MonoBehaviour
         for (int i = 0; i < numberOfBeds; i++)
         {
             Instantiate(bedPrefab, bedArray[i].position, bedArray[i].rotation);
+        }
+        for (int i = 0; i < numberOfComputers; i++)
+        {
+            Instantiate(computerPrefab, computerArray[i].position, computerArray[i].rotation);
         }
         for (int i = 0; i < numberOfFridges; i++)
         {
@@ -36,5 +46,9 @@ public class StationController : MonoBehaviour
 		{
 			Instantiate(toiletPrefab, toiletArray[i].position, toiletArray[i].rotation);
 		}
-	}
+        for (int i = 0; i < numberOfTvs; i++)
+        {
+            Instantiate(tvPrefab, tvArray[i].position, tvArray[i].rotation);
+        }
+    }
 }

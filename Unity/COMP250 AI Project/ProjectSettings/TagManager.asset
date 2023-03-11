@@ -8,6 +8,8 @@ TagManager:
   - Toilet
   - Bed
   - Fridge
+  - Computer
+  - TV
   layers:
   - Default
   - TransparentFX
