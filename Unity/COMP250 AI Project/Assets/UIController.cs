@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     public ProgressBar energyBar;
     public ProgressBar hungerBar;
     public ProgressBar thirstBar;
+    public Label moneyCounter;
     private int defaultValue = 100;
 
     void Start()
@@ -20,11 +21,13 @@ public class UIController : MonoBehaviour
         energyBar = uiDoc.rootVisualElement.Q<ProgressBar>("EnergyBar");
         hungerBar = uiDoc.rootVisualElement.Q<ProgressBar>("HungerBar");
         thirstBar = uiDoc.rootVisualElement.Q<ProgressBar>("ThirstBar");
+        moneyCounter = uiDoc.rootVisualElement.Q<Label>("MoneyCounter");
         bladderBar.value = defaultValue;
         boredomBar.value = defaultValue;
         energyBar.value = defaultValue;
         hungerBar.value = defaultValue;
         thirstBar.value = defaultValue;
+        moneyCounter.text = "Money: " + defaultValue.ToString();
     }
 
     public void UpdateBladder(int updateAmount)

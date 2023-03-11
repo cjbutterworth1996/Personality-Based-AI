@@ -4,4 +4,5 @@
     <ui:ProgressBar value="100" title="ENERGY" name="EnergyBar" />
     <ui:ProgressBar value="100" title="HUNGER" name="HungerBar" />
     <ui:ProgressBar value="100" title="THIRST" name="ThirstBar" />
+    <ui:Label text="Label" display-tooltip-when-elided="true" name="MoneyCounter" />
 </ui:UXML>
