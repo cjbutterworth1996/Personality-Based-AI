@@ -28,14 +28,57 @@ public class NPC_Controller : MonoBehaviour
     }
 
     // The NPC drinks to slate their thirst.
-    public IEnumerator Drink ()
+    public IEnumerator Drink()
     {
         timeInSeconds = 3;
 
         if (withinRangeOfTarget)
         {
             thirst += 10;
+            if (thirst > 100)
+            {
+                thirst = 100;
+            }
             yield return new WaitForSeconds(timeInSeconds);
+        }
+    }
+
+    public IEnumerator Eat()
+    {
+        timeInSeconds = 10;
+
+        if (withinRangeOfTarget)
+        {
+            hunger += 100;
+            if (hunger> 100)
+            {
+                hunger = 100;
+            }
+            yield return new WaitForSeconds(timeInSeconds);
+        }
+    }
+
+    void SlateHunger()
+    {
+        distanceToNearestStation = Mathf.Infinity;
+        target = "Fridge";
+        GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
+
+        // Determines what the nearest Fridge GameObject is
+        foreach (GameObject targetObject in targetObjects)
+        {
+            distance = Vector3.Distance(transform.position, targetObject.transform.position);
+
+            if (distance < distanceToNearestStation)
+            {
+                distanceToNearestStation = distance;
+                closestTarget = targetObject;
+            }
+        }
+
+        if (closestTarget != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
         }
     }
 
