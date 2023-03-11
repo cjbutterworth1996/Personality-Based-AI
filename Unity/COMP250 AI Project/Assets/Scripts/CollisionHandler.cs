@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    public NPCController npc;
+    private NPCController npc;
 
     void OnCollisionEnter(Collision collision)
     {
