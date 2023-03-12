@@ -11,13 +11,14 @@ public class UIController : MonoBehaviour
     public ProgressBar hungerBar;
     public ProgressBar thirstBar;
     public Label moneyCounter;
-    private int defaultValue = 100;
+    private int defaultValue;
     public UIDocument uiDoc;
 
     void Start()
     {
         this.enabled = true;
         uiDoc = GetComponent<UIDocument>();
+        defaultValue = 100;
         bladderBar = uiDoc.rootVisualElement.Q<ProgressBar>("BladderBar");
         boredomBar = uiDoc.rootVisualElement.Q<ProgressBar>("BoredomBar");
         energyBar = uiDoc.rootVisualElement.Q<ProgressBar>("EnergyBar");
