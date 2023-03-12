@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class NPCController : MonoBehaviour
@@ -14,28 +15,21 @@ public class NPCController : MonoBehaviour
     GameObject closestTarget = null;
     public bool withinRangeOfTarget = false;
     public int timeInSeconds;
+    public UIController uiController;
 
     public class Need
     {
         public int maxValue;
         public int currentValue;
         public int decreaseSpeed;
+        public ProgressBar bar;
 
-        public Need(int max, int current, int speed)
+        public Need(int max, int current, int speed, string barName, NPCController npc)
         {
             maxValue = max;
             currentValue = current;
             decreaseSpeed = speed;
-        }
-
-        public void DecreaseNeed()
-        {
-            currentValue -= decreaseSpeed;
-
-            if (currentValue <= 0)
-            {
-                // Implement death script
-            }
+            bar = npc.uiController.uiDoc.rootVisualElement.Q<ProgressBar>(barName);
         }
     }
 
@@ -48,12 +42,12 @@ public class NPCController : MonoBehaviour
     void Start ()
     {
         this.enabled = true;
-        bladder = new Need(100, 100, 1);
-        boredom = new Need(100, 100, 1);
-        energy = new Need(100, 100, 1);
-        hunger = new Need(100, 100, 1);
-        thirst = new Need(100, 100, 1);
-
+        uiController = FindObjectOfType<UIController>();
+        bladder = new Need(100, 100, 1, "BladderBar", this);
+        boredom = new Need(100, 100, 1, "BoredomBar", this);
+        energy = new Need(100, 100, 1, "EnergyBar", this);
+        hunger = new Need(100, 100, 1, "HungerBar", this);
+        thirst = new Need(100, 100, 1, "ThirstBar", this);    
     }
 
     // The NPC drinks to slate their thirst.

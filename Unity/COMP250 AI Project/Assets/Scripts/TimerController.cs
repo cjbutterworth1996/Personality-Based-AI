@@ -11,6 +11,7 @@ public class TimerController : MonoBehaviour
     private Timer timer;
     private int timerLength = 100;
     private NPCController npc;
+    private UIController ui;
 
     void Start()
     {

@@ -12,6 +12,7 @@ public class UIController : MonoBehaviour
     public ProgressBar thirstBar;
     public Label moneyCounter;
     private int defaultValue = 100;
+    public UIDocument uiDoc;
 
     void Start()
     {
