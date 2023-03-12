@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 
 public class NPCController : MonoBehaviour
@@ -16,6 +17,7 @@ public class NPCController : MonoBehaviour
     public bool withinRangeOfTarget;
     public int timeInSeconds;
     public UIController uiController;
+    public SceneController sceneController;
 
     public class Need
     {
@@ -23,18 +25,27 @@ public class NPCController : MonoBehaviour
         public int currentValue;
         public int decreaseSpeed;
         public ProgressBar bar;
+        public NPCController attachedNPC;
 
-        public Need(int max, int current, int speed, string barName, UIController uiController)
+        public Need(int max, int current, int speed, string barName, UIController uiController, NPCController npc)
         {
             maxValue = max;
             currentValue = current;
             decreaseSpeed = speed;
             bar = uiController.uiDoc.rootVisualElement.Q<ProgressBar>(barName);
+            attachedNPC= npc;
         }
 
         public void UpdateBar(ProgressBar bar, int updateAmount)
         {
             bar.value = updateAmount;
+
+            // If the NPC dies, the scene is reset.
+            if (bar.value <= 0)
+            {
+                attachedNPC.sceneController = FindObjectOfType<SceneController>();
+                attachedNPC.sceneController.SceneReset();
+            }
         }
     }
 
@@ -48,13 +59,18 @@ public class NPCController : MonoBehaviour
     {
         this.enabled = true;
         uiController = FindObjectOfType<UIController>();
-        bladder = new Need(100, 100, 1, "BladderBar", uiController);
-        boredom = new Need(100, 100, 1, "BoredomBar", uiController);
-        energy = new Need(100, 100, 1, "EnergyBar", uiController);
-        hunger = new Need(100, 100, 1, "HungerBar", uiController);
-        thirst = new Need(100, 100, 1, "ThirstBar", uiController);
+        bladder = new Need(100, 100, 50, "BladderBar", uiController, this);
+        boredom = new Need(100, 100, 1, "BoredomBar", uiController, this);
+        energy = new Need(100, 100, 1, "EnergyBar", uiController, this);
+        hunger = new Need(100, 100, 1, "HungerBar", uiController, this);
+        thirst = new Need(100, 100, 1, "ThirstBar", uiController, this);
         withinRangeOfTarget = false;
         closestTarget= null;
+    }
+
+    public void Death()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // The NPC drinks to slate their thirst.
@@ -173,10 +189,5 @@ public class NPCController : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
         }
-    }
-
-    void Update()
-    {
-        //Debug.Log("current thirst: " + thirst.currentValue);
     }
 }

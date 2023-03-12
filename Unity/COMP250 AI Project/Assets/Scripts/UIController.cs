@@ -32,31 +32,6 @@ public class UIController : MonoBehaviour
         moneyCounter.text = "Money: " + defaultValue.ToString();
     }
 
-    public void UpdateBladder(int updateAmount)
-    {
-        bladderBar.value = updateAmount;
-    }
-
-    public void UpdateBoredom(int updateAmount)
-    {
-        boredomBar.value = updateAmount;
-    }
-
-    public void UpdateEnergy(int updateAmount)
-    {
-        energyBar.value = updateAmount;
-    }
-
-    public void UpdateHunger(int updateAmount)
-    {
-        hungerBar.value = updateAmount;
-    }
-
-    public void UpdateThirst(int updateAmount)
-    {
-        thirstBar.value = updateAmount;
-    }
-
     public void UpdateMoney(int updateAmount)
     {
         moneyCounter.text = "Money: " + updateAmount.ToString();
