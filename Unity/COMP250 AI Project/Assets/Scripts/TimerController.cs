@@ -5,24 +5,29 @@ using UnityEngine;
 
 public class TimerController : MonoBehaviour
 {
-    public int needsMin = 0;
-    public int needsMax = 100;
-    public int decreaseSpeed = 1;
+    public int timerSpeed;
     private Timer timer;
-    private int timerLength = 100;
+    private int timerLength;
     private NPCController npc;
     private UIController ui;
 
     void Start()
     {
+        timerSpeed = 1;
+        timerLength = 100;
         npc = GetComponent<NPCController>();
-        timer = new Timer(decreaseSpeed * timerLength);
+
+        // This timer will repeat indefinitely, and it ticks every second.
+        timer = new Timer(timerSpeed * timerLength);
         timer.AutoReset = true;
         timer.Enabled = true;
 
+        // Calls UpdateBars() on a regular interval. Allows instant updating of the UI progress bars.
+        // The three parameters are the function to call, the initial delay in seconds, and the interval delay in seconds.
         InvokeRepeating("UpdateBars", 1f, 1f);
     }
 
+    // Updates the NPC's Needs ProgressBars based on their decreaseSpeed.
     void UpdateBars()
     {
         npc.bladder.UpdateBar(npc.bladder.bar, npc.bladder.currentValue -= npc.bladder.decreaseSpeed);
