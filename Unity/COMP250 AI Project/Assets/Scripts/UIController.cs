@@ -16,7 +16,8 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
-        UIDocument uiDoc = GetComponent<UIDocument>();
+        this.enabled = true;
+        uiDoc = GetComponent<UIDocument>();
         bladderBar = uiDoc.rootVisualElement.Q<ProgressBar>("BladderBar");
         boredomBar = uiDoc.rootVisualElement.Q<ProgressBar>("BoredomBar");
         energyBar = uiDoc.rootVisualElement.Q<ProgressBar>("EnergyBar");

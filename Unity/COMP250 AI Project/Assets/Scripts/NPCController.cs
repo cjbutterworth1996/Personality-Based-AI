@@ -12,8 +12,8 @@ public class NPCController : MonoBehaviour
     float distanceToNearestStation;
     float distance;
     GameObject[] targetObjects;
-    GameObject closestTarget = null;
-    public bool withinRangeOfTarget = false;
+    GameObject closestTarget;
+    public bool withinRangeOfTarget;
     public int timeInSeconds;
     public UIController uiController;
 
@@ -24,12 +24,17 @@ public class NPCController : MonoBehaviour
         public int decreaseSpeed;
         public ProgressBar bar;
 
-        public Need(int max, int current, int speed, string barName, NPCController npc)
+        public Need(int max, int current, int speed, string barName, UIController uiController)
         {
             maxValue = max;
             currentValue = current;
             decreaseSpeed = speed;
-            bar = npc.uiController.uiDoc.rootVisualElement.Q<ProgressBar>(barName);
+            bar = uiController.uiDoc.rootVisualElement.Q<ProgressBar>(barName);
+        }
+
+        public void UpdateBar(ProgressBar bar, int updateAmount)
+        {
+            bar.value = updateAmount;
         }
     }
 
@@ -43,11 +48,13 @@ public class NPCController : MonoBehaviour
     {
         this.enabled = true;
         uiController = FindObjectOfType<UIController>();
-        bladder = new Need(100, 100, 1, "BladderBar", this);
-        boredom = new Need(100, 100, 1, "BoredomBar", this);
-        energy = new Need(100, 100, 1, "EnergyBar", this);
-        hunger = new Need(100, 100, 1, "HungerBar", this);
-        thirst = new Need(100, 100, 1, "ThirstBar", this);    
+        bladder = new Need(100, 100, 1, "BladderBar", uiController);
+        boredom = new Need(100, 100, 1, "BoredomBar", uiController);
+        energy = new Need(100, 100, 1, "EnergyBar", uiController);
+        hunger = new Need(100, 100, 1, "HungerBar", uiController);
+        thirst = new Need(100, 100, 1, "ThirstBar", uiController);
+        withinRangeOfTarget = false;
+        closestTarget= null;
     }
 
     // The NPC drinks to slate their thirst.

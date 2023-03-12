@@ -37,6 +37,7 @@ public class TimerController : MonoBehaviour
         while (need.currentValue > 0)
         {
             need.currentValue -= need.decreaseSpeed;
+            need.UpdateBar(need.bar, need.currentValue);
 
             if (need.currentValue <= 0)
             {
