@@ -5,14 +5,7 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    [SerializeField]
-    public int bladder;
-    public int boredom;
-    public int energy;
-    public int hunger;
     public int money;
-    public int thirst;
-
     public string target;
     public float speed;
     float distanceToNearestStation;
@@ -22,9 +15,45 @@ public class NPCController : MonoBehaviour
     public bool withinRangeOfTarget = false;
     public int timeInSeconds;
 
+    public class Need
+    {
+        public int maxValue;
+        public int currentValue;
+        public int decreaseSpeed;
+
+        public Need(int max, int current, int speed)
+        {
+            maxValue = max;
+            currentValue = current;
+            decreaseSpeed = speed;
+        }
+
+        public void DecreaseNeed()
+        {
+            currentValue -= decreaseSpeed;
+
+            if (currentValue <= 0)
+            {
+                // Implement death script
+            }
+        }
+    }
+
+    public Need bladder;
+    public Need boredom;
+    public Need energy;
+    public Need hunger;
+    public Need thirst;
+
     void Start ()
     {
         this.enabled = true;
+        bladder = new Need(100, 100, 1);
+        boredom = new Need(100, 100, 1);
+        energy = new Need(100, 100, 1);
+        hunger = new Need(100, 100, 1);
+        thirst = new Need(100, 100, 1);
+
     }
 
     // The NPC drinks to slate their thirst.
@@ -34,10 +63,10 @@ public class NPCController : MonoBehaviour
 
         if (withinRangeOfTarget)
         {
-            thirst += 10;
-            if (thirst > 100)
+            thirst.currentValue += 10;
+            if (thirst.currentValue > 100)
             {
-                thirst = 100;
+                thirst.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
@@ -50,11 +79,11 @@ public class NPCController : MonoBehaviour
 
         if (withinRangeOfTarget)
         {
-            hunger += 100;
+            hunger.currentValue += 100;
             money -= 10;
-            if (hunger > 100)
+            if (hunger.currentValue > 100)
             {
-                hunger = 100;
+                hunger.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
@@ -67,10 +96,10 @@ public class NPCController : MonoBehaviour
 
         if (withinRangeOfTarget)
         {
-            bladder += 100;
-            if (bladder > 100)
+            bladder.currentValue += 100;
+            if (bladder.currentValue > 100)
             {
-                bladder = 100;
+                bladder.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
@@ -83,11 +112,11 @@ public class NPCController : MonoBehaviour
 
         if (withinRangeOfTarget)
         {
-            energy += 100;
+            energy.currentValue += 100;
             money -= 20;
-            if (energy > 100)
+            if (energy.currentValue > 100)
             {
-                energy = 100;
+                energy.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
@@ -99,11 +128,11 @@ public class NPCController : MonoBehaviour
 
         if (withinRangeOfTarget)
         {
-            boredom += 50;
+            boredom.currentValue += 50;
             money -= 5;
-            if (boredom > 100)
+            if (boredom.currentValue > 100)
             {
-                boredom = 100;
+                boredom.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
