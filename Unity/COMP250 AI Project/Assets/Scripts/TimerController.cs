@@ -17,38 +17,10 @@ public class TimerController : MonoBehaviour
     {
         npc = GetComponent<NPCController>();
         timer = new Timer(decreaseSpeed * timerLength);
-        timer.Elapsed += DecreaseNeeds;
         timer.AutoReset = true;
         timer.Enabled = true;
 
         InvokeRepeating("UpdateBars", 1f, 1f);
-    }
-
-    void DecreaseNeeds(object sender, ElapsedEventArgs e)
-    {
-        StartCoroutine(DecreaseNeed(npc.bladder));
-        StartCoroutine(DecreaseNeed(npc.boredom));
-        StartCoroutine(DecreaseNeed(npc.energy));
-        StartCoroutine(DecreaseNeed(npc.hunger));
-        StartCoroutine(DecreaseNeed(npc.thirst));
-    }
-
-    // Decreases each needs bar at a constant speed. By default this is by 1 every 1 second.
-    IEnumerator DecreaseNeed(NPCController.Need need)
-    {
-        while (need.currentValue > 0)
-        {
-            need.currentValue -= need.decreaseSpeed;
-            Debug.Log("need.currentValue = " + need.currentValue);
-            need.UpdateBar(need.bar, need.currentValue);
-
-            if (need.currentValue <= 0)
-            {
-                // Implement death script
-            }
-
-            yield return new WaitForSeconds(need.decreaseSpeed);
-        }
     }
 
     void UpdateBars()
