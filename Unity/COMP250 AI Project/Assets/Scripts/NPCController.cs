@@ -190,4 +190,9 @@ public class NPCController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
         }
     }
+
+    void Update()
+    {
+
+    }
 }
