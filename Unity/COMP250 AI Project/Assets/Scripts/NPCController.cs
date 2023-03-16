@@ -168,7 +168,7 @@ public class NPCController : MonoBehaviour
     }
 
     // The NPC moves to the nearest targeted station.
-    void MoveToTarget()
+    public void MoveToTarget()
     {
         distanceToNearestStation = Mathf.Infinity;
         GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);

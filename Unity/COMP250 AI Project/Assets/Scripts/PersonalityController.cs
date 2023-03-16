@@ -20,7 +20,7 @@ public class PersonalityController : MonoBehaviour
     public int moneyNeededPerDay;
     public NPCController npcController;
 
-    void PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, float minMoney, float maxMoney)
+    public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, float minMoney, float maxMoney)
     {
         bladderWeight = bladder;
         boredomWeight = boredom;
@@ -37,7 +37,7 @@ public class PersonalityController : MonoBehaviour
     }
 
     // Creates a reward for fulfilling a need based on distance from maxValue and the NPC's personality-set rewardWeight.
-    float CalcReward(float NPCController.Need need, float rewardWeight)
+    float CalcReward(NPCController.Need need, float rewardWeight)
     {
         return (need.maxValue - need.currentValue) * rewardWeight;
     }
@@ -51,14 +51,16 @@ public class PersonalityController : MonoBehaviour
 
     void Update()
     {
-        float rewardBladder = CalculateReward(bladderLevel, weightBladder);
-        float rewardBoredom = CalculateReward(boredomLevel, weightBoredom);
-        float rewardEnergy = CalculateReward(energyLevel, weightEnergy);
-        float rewardHunger = CalculateReward(hungerLevel, weightHunger);
-        float rewardThirst = CalculateReward(thirstLevel, weightThirst);
+        float rewardBladder = CalcReward(npcController.bladder, bladderWeight);
+        float rewardBoredom = CalcReward(npcController.boredom, boredomWeight);
+        float rewardEnergy = CalcReward(npcController.energy, energyWeight);
+        float rewardHunger = CalcReward(npcController.hunger, hungerWeight);
+        float rewardThirst = CalcReward(npcController.thirst, thirstWeight);
+        float highestReward = Mathf.Max(bladderReward, boredomReward, energyReward, hungerReward, thirstReward);
+
 
         // Check if NPC needs to work to earn money before satisfying needs.
-        bool needsMoney = (money < minMoneyThreshold || money > maxMoneyThreshold);
+        bool needsMoney = (npcController.money < minMoneyThreshold || npcController.money > maxMoneyThreshold);
         if (needsMoney)
         {
             npcController.target = "Computer";
@@ -68,27 +70,25 @@ public class PersonalityController : MonoBehaviour
                 npcController.Work();
             }
         }
-
-        float highestReward = Mathf.Max(rewardBladder, rewardBoredom, rewardEnergy, rewardHunger, rewardThirst);
-        if (highestReward == rewardBladder)
+        else if (highestReward == bladderReward)
         {
-            PerformBladderAction(needsMoney);
+            
         }
-        else if (highestReward == rewardBoredom)
+        else if (highestReward == boredomReward)
         {
-            PerformBoredomAction(prioritizeFinances);
+            
         }
-        else if (highestReward == rewardEnergy)
+        else if (highestReward == energyReward)
         {
-            PerformEnergyAction(prioritizeFinances);
+            
         }
-        else if (highestReward == rewardHunger)
+        else if (highestReward == hungerReward)
         {
-            PerformHungerAction(prioritizeFinances);
+            
         }
-        else if (highestReward == rewardThirst)
+        else if (highestReward == thirstReward)
         {
-            PerformThirstAction(prioritizeFinances);
+            
         }
     }
 }
