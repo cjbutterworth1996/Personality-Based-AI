@@ -72,23 +72,48 @@ public class PersonalityController : MonoBehaviour
         }
         else if (highestReward == bladderReward)
         {
-            
+            npcController.target = "Toilet";
+            npcController.MoveToTarget();
+            if (npcController.withinRangeOfTarget)
+            {
+                npcController.EmptyBladder();
+            }
         }
         else if (highestReward == boredomReward)
         {
-            
+            npcController.target = "TV";
+            npcController.MoveToTarget();
+            if (npcController.withinRangeOfTarget)
+            {
+                npcController.WatchTv();
+            }
         }
         else if (highestReward == energyReward)
         {
-            
+            npcController.target = "Bed";
+            npcController.MoveToTarget();
+            if (npcController.withinRangeOfTarget)
+            {
+                npcController.Sleep();
+            }
         }
         else if (highestReward == hungerReward)
         {
-            
+            npcController.target = "Fridge";
+            npcController.MoveToTarget();
+            if (npcController.withinRangeOfTarget)
+            {
+                npcController.Eat();
+            }
         }
         else if (highestReward == thirstReward)
         {
-            
+            npcController.target = "Sink";
+            npcController.MoveToTarget();
+            if (npcController.withinRangeOfTarget)
+            {
+                npcController.Drink();
+            }
         }
     }
 }
