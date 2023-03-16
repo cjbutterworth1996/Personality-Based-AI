@@ -14,6 +14,7 @@ public class PersonalityController : MonoBehaviour
     public float energyReward;
     public float hungerReward;
     public float thirstReward;
+    public float highestReward;
     public float minMoneyThreshold;
     public float maxMoneyThreshold;
     public float randomizationFactor;
@@ -51,12 +52,12 @@ public class PersonalityController : MonoBehaviour
 
     void Update()
     {
-        float rewardBladder = CalcReward(npcController.bladder, bladderWeight);
-        float rewardBoredom = CalcReward(npcController.boredom, boredomWeight);
-        float rewardEnergy = CalcReward(npcController.energy, energyWeight);
-        float rewardHunger = CalcReward(npcController.hunger, hungerWeight);
-        float rewardThirst = CalcReward(npcController.thirst, thirstWeight);
-        float highestReward = Mathf.Max(bladderReward, boredomReward, energyReward, hungerReward, thirstReward);
+        bladderReward = CalcReward(npcController.bladder, bladderWeight);
+        boredomReward = CalcReward(npcController.boredom, boredomWeight);
+        energyReward = CalcReward(npcController.energy, energyWeight);
+        hungerReward = CalcReward(npcController.hunger, hungerWeight);
+        thirstReward = CalcReward(npcController.thirst, thirstWeight);
+        highestReward = Mathf.Max(bladderReward, boredomReward, energyReward, hungerReward, thirstReward);
 
 
         // Check if NPC needs to work to earn money before satisfying needs.
