@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -8796503906724038953}
   - component: {fileID: -4417651994320402329}
   - component: {fileID: 6817743284795764153}
+  - component: {fileID: 2902941896687863550}
   m_Layer: 0
   m_Name: Basic NPC
   m_TagString: NPC
@@ -43,7 +44,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4034372360890504881}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -61,16 +62,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f3015ec1bfd0e4494d5d1acec9b76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bladder: 0
-  boredom: 0
-  energy: 0
-  hunger: 0
   money: 0
-  thirst: 0
   target: 
   speed: 0
   withinRangeOfTarget: 0
+  isBusy: 0
   timeInSeconds: 0
+  uiController: {fileID: 0}
+  sceneController: {fileID: 0}
 --- !u!114 &6817743284795764153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +82,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b4231f83579174389614739aa5af0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerSpeed: 0
+--- !u!114 &2902941896687863550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034372360890504881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1540540228225409d749a6a8325833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bladderWeight: 0
+  boredomWeight: 0
+  energyWeight: 0
+  hungerWeight: 0
+  thirstWeight: 0
+  bladderReward: 0
+  boredomReward: 0
+  energyReward: 0
+  hungerReward: 0
+  thirstReward: 0
+  highestReward: 0
+  minMoneyThreshold: 0
+  maxMoneyThreshold: 0
+  randomizationFactor: 0
+  moneyNeededPerDay: 0
+  npcController: {fileID: 0}
 --- !u!1 &5490022472693039699
 GameObject:
   m_ObjectHideFlags: 0

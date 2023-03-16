@@ -60,7 +60,7 @@ public class NPCController : MonoBehaviour
     {
         this.enabled = true;
         uiController = FindObjectOfType<UIController>();
-        bladder = new Need(100, 100, 50, "BladderBar", uiController, this);
+        bladder = new Need(100, 100, 1, "BladderBar", uiController, this);
         boredom = new Need(100, 100, 1, "BoredomBar", uiController, this);
         energy = new Need(100, 100, 1, "EnergyBar", uiController, this);
         hunger = new Need(100, 100, 1, "HungerBar", uiController, this);
@@ -115,6 +115,7 @@ public class NPCController : MonoBehaviour
     // The NPC uses the toilet to empty their bladder.
     public IEnumerator EmptyBladder()
     {
+        isBusy = true;
         timeInSeconds = 2;
 
         if (withinRangeOfTarget)
@@ -203,8 +204,6 @@ public class NPCController : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
         }
-
-        isBusy = true;
     }
 
     void Update()

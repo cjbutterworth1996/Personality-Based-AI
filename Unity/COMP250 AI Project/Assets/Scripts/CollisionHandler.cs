@@ -8,6 +8,7 @@ public class CollisionHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collided");
         if (collision.gameObject.tag == "NPC")
         {
             npc = collision.gameObject.GetComponent<NPCController>();

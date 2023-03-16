@@ -32,7 +32,7 @@ public class PersonalityController : MonoBehaviour
         maxMoneyThreshold = maxMoney;
     }
 
-    void GeneratePersonality ()
+    void GeneratePersonality (string optionalTag)
     {
 
     }
@@ -62,58 +62,61 @@ public class PersonalityController : MonoBehaviour
 
         // Check if NPC needs to work to earn money before satisfying needs.
         bool needsMoney = (npcController.money < minMoneyThreshold || npcController.money > maxMoneyThreshold);
-        if (needsMoney)
+        if (!npcController.isBusy)
         {
-            npcController.target = "Computer";
-            npcController.MoveToTarget();
-            if(npcController.withinRangeOfTarget)
+            if (needsMoney)
             {
-                npcController.Work();
+                npcController.target = "Computer";
+                npcController.MoveToTarget();
+                if (npcController.withinRangeOfTarget)
+                {
+                    npcController.Work();
+                }
             }
-        }
-        else if (highestReward == bladderReward)
-        {
-            npcController.target = "Toilet";
-            npcController.MoveToTarget();
-            if (npcController.withinRangeOfTarget)
+            else if (highestReward == bladderReward)
             {
-                npcController.EmptyBladder();
+                npcController.target = "Toilet";
+                npcController.MoveToTarget();
+                if (npcController.withinRangeOfTarget)
+                {
+                    npcController.EmptyBladder();
+                }
             }
-        }
-        else if (highestReward == boredomReward)
-        {
-            npcController.target = "TV";
-            npcController.MoveToTarget();
-            if (npcController.withinRangeOfTarget)
+            else if (highestReward == boredomReward)
             {
-                npcController.WatchTv();
+                npcController.target = "TV";
+                npcController.MoveToTarget();
+                if (npcController.withinRangeOfTarget)
+                {
+                    npcController.WatchTv();
+                }
             }
-        }
-        else if (highestReward == energyReward)
-        {
-            npcController.target = "Bed";
-            npcController.MoveToTarget();
-            if (npcController.withinRangeOfTarget)
+            else if (highestReward == energyReward)
             {
-                npcController.Sleep();
+                npcController.target = "Bed";
+                npcController.MoveToTarget();
+                if (npcController.withinRangeOfTarget)
+                {
+                    npcController.Sleep();
+                }
             }
-        }
-        else if (highestReward == hungerReward)
-        {
-            npcController.target = "Fridge";
-            npcController.MoveToTarget();
-            if (npcController.withinRangeOfTarget)
+            else if (highestReward == hungerReward)
             {
-                npcController.Eat();
+                npcController.target = "Fridge";
+                npcController.MoveToTarget();
+                if (npcController.withinRangeOfTarget)
+                {
+                    npcController.Eat();
+                }
             }
-        }
-        else if (highestReward == thirstReward)
-        {
-            npcController.target = "Sink";
-            npcController.MoveToTarget();
-            if (npcController.withinRangeOfTarget)
+            else if (highestReward == thirstReward)
             {
-                npcController.Drink();
+                npcController.target = "Sink";
+                npcController.MoveToTarget();
+                if (npcController.withinRangeOfTarget)
+                {
+                    npcController.Drink();
+                }
             }
         }
     }
