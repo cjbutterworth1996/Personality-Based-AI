@@ -15,6 +15,7 @@ public class NPCController : MonoBehaviour
     GameObject[] targetObjects;
     GameObject closestTarget;
     public bool withinRangeOfTarget;
+    public bool isBusy;
     public int timeInSeconds;
     public UIController uiController;
     public SceneController sceneController;
@@ -66,6 +67,7 @@ public class NPCController : MonoBehaviour
         thirst = new Need(100, 100, 1, "ThirstBar", uiController, this);
         withinRangeOfTarget = false;
         closestTarget= null;
+        isBusy = false;
     }
 
     public void Death()
@@ -87,6 +89,8 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
+
+        isBusy = false;
     }
 
     // The NPC eats to slate their hunger.
@@ -104,6 +108,8 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
+
+        isBusy = false;
     }
 
     // The NPC uses the toilet to empty their bladder.
@@ -120,6 +126,8 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
+
+        isBusy = false;
     }
 
     // The NPC uses the bed to refill their energy.
@@ -137,6 +145,8 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
+
+        isBusy = false;
     }
 
     public IEnumerator WatchTv()
@@ -153,6 +163,8 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
+
+        isBusy = false;
     }
 
     // The NPC uses the computer to earn money.
@@ -165,6 +177,8 @@ public class NPCController : MonoBehaviour
             money += 10;
             yield return new WaitForSeconds(timeInSeconds);
         }
+
+        isBusy = false;
     }
 
     // The NPC moves to the nearest targeted station.
@@ -189,6 +203,8 @@ public class NPCController : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
         }
+
+        isBusy = true;
     }
 
     void Update()
