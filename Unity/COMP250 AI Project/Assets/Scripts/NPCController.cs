@@ -210,6 +210,8 @@ public class NPCController : MonoBehaviour
             yield return null;
         }
 
+        withinRangeOfTarget = true;
+        isBusy = false;
         Debug.Log("Reached target");
     }
 }

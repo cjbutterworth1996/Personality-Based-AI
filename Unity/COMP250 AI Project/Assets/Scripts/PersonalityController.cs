@@ -108,23 +108,24 @@ public class PersonalityController : MonoBehaviour
         {
             if (npcController.target == "Toilet")
             {
-                npcController.EmptyBladder();
+                StartCoroutine(npcController.EmptyBladder());
+                Debug.Log("ActionComplete");
             }
             else if (npcController.target == "TV")
             {
-                npcController.WatchTv();
+                StartCoroutine(npcController.WatchTv());
             }
             else if (npcController.target == "Bed")
             {
-                npcController.Sleep();
+                StartCoroutine(npcController.Sleep());
             }
             else if (npcController.target == "Fridge")
             {
-                npcController.Eat();
+                StartCoroutine(npcController.Eat());
             }
             else if (npcController.target == "Sink")
             {
-                npcController.Drink();
+                StartCoroutine(npcController.Drink());
             }
         }
     }
