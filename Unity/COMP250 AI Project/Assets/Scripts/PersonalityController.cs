@@ -120,6 +120,8 @@ public class PersonalityController : MonoBehaviour
             npcController.target = "Sink";
         }
 
+        Debug.Log("New Target = " + npcController.target);
+
         if (!npcController.withinRangeOfTarget)
         {
             Debug.Log("Moving");
@@ -149,5 +151,11 @@ public class PersonalityController : MonoBehaviour
                 StartCoroutine(npcController.Drink());
             }
         }
+    }
+
+    // Checks to see if the withinRangeOfTarget bool is accurate by checking nearest station to target station.
+    bool CheckStation()
+    {
+
     }
 }
