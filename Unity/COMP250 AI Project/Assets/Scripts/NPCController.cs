@@ -145,6 +145,7 @@ public class NPCController : MonoBehaviour
                 energy.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
+            isBusy = false;
         }
     }
 
@@ -161,6 +162,7 @@ public class NPCController : MonoBehaviour
                 boredom.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
+            isBusy = false;
         }
     }
 
@@ -173,6 +175,7 @@ public class NPCController : MonoBehaviour
         {
             money += 10;
             yield return new WaitForSeconds(timeInSeconds);
+            isBusy = false;
         }
     }
 
