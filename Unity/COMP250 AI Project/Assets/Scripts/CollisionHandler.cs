@@ -8,7 +8,6 @@ public class CollisionHandler : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Collided");
         if (collider.gameObject.tag == "NPC")
         {
             npc = collider.gameObject.GetComponent<NPCController>();
@@ -16,7 +15,10 @@ public class CollisionHandler : MonoBehaviour
             if (npc.target == gameObject.tag)
             {
                 npc.withinRangeOfTarget = true;
-            }    
+            }
+
+            Debug.Log("HitTrigger");
+            npc.isBusy = false;
         }
     }
 

@@ -20,6 +20,7 @@ public class PersonalityController : MonoBehaviour
     public float randomizationFactor;
     public int moneyNeededPerDay;
     public NPCController npcController;
+    public bool needsMoney;
 
     public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, float minMoney, float maxMoney)
     {
@@ -52,6 +53,16 @@ public class PersonalityController : MonoBehaviour
 
     void Update()
     {
+        if (!npcController.isBusy) 
+        {
+            Debug.Log("Choosing");
+            ChooseNextAction();
+        }
+    }
+
+    void ChooseNextAction()
+    {
+        npcController.isBusy = true;
         bladderReward = CalcReward(npcController.bladder, bladderWeight);
         boredomReward = CalcReward(npcController.boredom, boredomWeight);
         energyReward = CalcReward(npcController.energy, energyWeight);
@@ -61,62 +72,59 @@ public class PersonalityController : MonoBehaviour
 
 
         // Check if NPC needs to work to earn money before satisfying needs.
-        bool needsMoney = (npcController.money < minMoneyThreshold || npcController.money > maxMoneyThreshold);
-        if (!npcController.isBusy)
+        needsMoney = (npcController.money < minMoneyThreshold || npcController.money > maxMoneyThreshold);
+
+        if (needsMoney)
         {
-            if (needsMoney)
+            npcController.target = "Computer";
+        }
+        else if (highestReward == bladderReward)
+        {
+            npcController.target = "Toilet";
+        }
+        else if (highestReward == boredomReward)
+        {
+            npcController.target = "TV";
+        }
+        else if (highestReward == energyReward)
+        {
+            npcController.target = "Bed";
+        }
+        else if (highestReward == hungerReward)
+        {
+            npcController.target = "Fridge";
+        }
+        else if (highestReward == thirstReward)
+        {
+            npcController.target = "Sink";
+        }
+
+        if (!npcController.withinRangeOfTarget)
+        {
+            Debug.Log("Moving");
+            npcController.MoveToTarget();
+        }
+        else
+        {
+            if (npcController.target == "Toilet")
             {
-                npcController.target = "Computer";
-                npcController.MoveToTarget();
-                if (npcController.withinRangeOfTarget)
-                {
-                    npcController.Work();
-                }
+                npcController.EmptyBladder();
             }
-            else if (highestReward == bladderReward)
+            else if (npcController.target == "TV")
             {
-                npcController.target = "Toilet";
-                npcController.MoveToTarget();
-                if (npcController.withinRangeOfTarget)
-                {
-                    npcController.EmptyBladder();
-                }
+                npcController.WatchTv();
             }
-            else if (highestReward == boredomReward)
+            else if (npcController.target == "Bed")
             {
-                npcController.target = "TV";
-                npcController.MoveToTarget();
-                if (npcController.withinRangeOfTarget)
-                {
-                    npcController.WatchTv();
-                }
+                npcController.Sleep();
             }
-            else if (highestReward == energyReward)
+            else if (npcController.target == "Fridge")
             {
-                npcController.target = "Bed";
-                npcController.MoveToTarget();
-                if (npcController.withinRangeOfTarget)
-                {
-                    npcController.Sleep();
-                }
+                npcController.Eat();
             }
-            else if (highestReward == hungerReward)
+            else if (npcController.target == "Sink")
             {
-                npcController.target = "Fridge";
-                npcController.MoveToTarget();
-                if (npcController.withinRangeOfTarget)
-                {
-                    npcController.Eat();
-                }
-            }
-            else if (highestReward == thirstReward)
-            {
-                npcController.target = "Sink";
-                npcController.MoveToTarget();
-                if (npcController.withinRangeOfTarget)
-                {
-                    npcController.Drink();
-                }
+                npcController.Drink();
             }
         }
     }

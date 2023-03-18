@@ -19,6 +19,8 @@ public class NPCController : MonoBehaviour
     public int timeInSeconds;
     public UIController uiController;
     public SceneController sceneController;
+    public PersonalityController personalityController;
+    float distanceThreshold;
 
     public class Need
     {
@@ -68,6 +70,8 @@ public class NPCController : MonoBehaviour
         withinRangeOfTarget = false;
         closestTarget= null;
         isBusy = false;
+        personalityController = GetComponent<PersonalityController>();
+        distanceThreshold = 1f;
     }
 
     public void Death()
@@ -89,8 +93,6 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
-
-        isBusy = false;
     }
 
     // The NPC eats to slate their hunger.
@@ -108,15 +110,13 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
-
-        isBusy = false;
     }
 
     // The NPC uses the toilet to empty their bladder.
     public IEnumerator EmptyBladder()
     {
-        isBusy = true;
         timeInSeconds = 2;
+        Debug.Log("Pooping");
 
         if (withinRangeOfTarget)
         {
@@ -126,9 +126,9 @@ public class NPCController : MonoBehaviour
                 bladder.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
+            Debug.Log("Bladder = " + bladder.currentValue);
+            isBusy = false;
         }
-
-        isBusy = false;
     }
 
     // The NPC uses the bed to refill their energy.
@@ -146,8 +146,6 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
-
-        isBusy = false;
     }
 
     public IEnumerator WatchTv()
@@ -164,8 +162,6 @@ public class NPCController : MonoBehaviour
             }
             yield return new WaitForSeconds(timeInSeconds);
         }
-
-        isBusy = false;
     }
 
     // The NPC uses the computer to earn money.
@@ -178,8 +174,6 @@ public class NPCController : MonoBehaviour
             money += 10;
             yield return new WaitForSeconds(timeInSeconds);
         }
-
-        isBusy = false;
     }
 
     // The NPC moves to the nearest targeted station.
@@ -202,12 +196,20 @@ public class NPCController : MonoBehaviour
 
         if (closestTarget != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
+            StartCoroutine(StepTowardsTarget());
         }
+
+        Debug.Log("Finished movement function");
     }
 
-    void Update()
+    IEnumerator StepTowardsTarget()
     {
+        while (Vector3.Distance(transform.position, closestTarget.transform.position) > distanceThreshold)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, closestTarget.transform.position, speed * Time.deltaTime);
+            yield return null;
+        }
 
+        Debug.Log("Reached target");
     }
 }
