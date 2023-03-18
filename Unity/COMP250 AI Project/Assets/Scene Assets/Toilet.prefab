@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3764286090154226794}
-  - component: {fileID: 3343013508763685905}
   - component: {fileID: 8089717643080253056}
+  - component: {fileID: -8731639196894257655}
   m_Layer: 0
   m_Name: Toilet
   m_TagString: Toilet
@@ -34,18 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3343013508763685905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636771433035190290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f5cf29766a73824ba719cb33c0a44d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &8089717643080253056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57,8 +45,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.110235, y: 3.3607788, z: 6.836913}
-  m_Center: {x: -0.31328678, y: 0.6312623, z: 0.24600792}
+  m_Size: {x: 29.745516, y: 6.256906, z: 20.050138}
+  m_Center: {x: 6.1542883, y: 2.079326, z: 4.018214}
+--- !u!114 &-8731639196894257655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636771433035190290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5cf29766a73824ba719cb33c0a44d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &730245630865752898
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,5 +154,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.876257
+  m_Center: {x: 0, y: 0.053488255, z: 0.028772116}

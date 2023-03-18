@@ -6,12 +6,12 @@ public class CollisionHandler : MonoBehaviour
 {
     private NPCController npc;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
         Debug.Log("Collided");
-        if (collision.gameObject.tag == "NPC")
+        if (collider.gameObject.tag == "NPC")
         {
-            npc = collision.gameObject.GetComponent<NPCController>();
+            npc = collider.gameObject.GetComponent<NPCController>();
 
             if (npc.target == gameObject.tag)
             {
@@ -24,7 +24,13 @@ public class CollisionHandler : MonoBehaviour
     {
         if (collider.gameObject.tag == "NPC")
         {
+            npc = collider.gameObject.GetComponent<NPCController>();
             npc.withinRangeOfTarget = false;
         }
+    }
+
+    void Start()
+    {
+        this.enabled = true;
     }
 }
