@@ -72,7 +72,8 @@ public class NPCController : MonoBehaviour
         closestTarget= null;
         isBusy = false;
         personalityController = GetComponent<PersonalityController>();
-        distanceThreshold = 1f;
+        distanceThreshold = 2f;
+        money = 100;
     }
 
     public void Death()
@@ -109,10 +110,13 @@ public class NPCController : MonoBehaviour
         {
             hunger.currentValue += 100;
             money -= 10;
+            uiController.UpdateMoney(money);
+
             if (hunger.currentValue > 100)
             {
                 hunger.currentValue = 100;
             }
+
             yield return new WaitForSeconds(timeInSeconds);
             isBusy = false;
         }
@@ -127,10 +131,12 @@ public class NPCController : MonoBehaviour
         if (withinRangeOfTarget)
         {
             bladder.currentValue += 100;
+
             if (bladder.currentValue > 100)
             {
                 bladder.currentValue = 100;
             }
+
             yield return new WaitForSeconds(timeInSeconds);
             isBusy = false;
         }
@@ -146,10 +152,13 @@ public class NPCController : MonoBehaviour
         {
             energy.currentValue += 100;
             money -= 20;
+            uiController.UpdateMoney(money);
+
             if (energy.currentValue > 100)
             {
                 energy.currentValue = 100;
             }
+
             yield return new WaitForSeconds(timeInSeconds);
             isBusy = false;
         }
@@ -164,10 +173,13 @@ public class NPCController : MonoBehaviour
         {
             boredom.currentValue += 50;
             money -= 5;
+            uiController.UpdateMoney(money);
+
             if (boredom.currentValue > 100)
             {
                 boredom.currentValue = 100;
             }
+
             yield return new WaitForSeconds(timeInSeconds);
             isBusy = false;
         }
@@ -182,6 +194,8 @@ public class NPCController : MonoBehaviour
         if (withinRangeOfTarget)
         {
             money += 10;
+            uiController.UpdateMoney(money);
+
             yield return new WaitForSeconds(timeInSeconds);
             isBusy = false;
         }

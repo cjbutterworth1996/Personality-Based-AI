@@ -16,7 +16,6 @@ public class PersonalityController : MonoBehaviour
     public float thirstReward;
     public float highestReward;
     public float minMoneyThreshold;
-    public float maxMoneyThreshold;
     public float randomizationFactor;
     public float minWeight;
     public float maxWeight;
@@ -25,7 +24,7 @@ public class PersonalityController : MonoBehaviour
     public NPCController npcController;
     public bool needsMoney;
 
-    public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, float minMoney, float maxMoney)
+    public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, float minMoney)
     {
         bladderWeight = bladder;
         boredomWeight = boredom;
@@ -33,7 +32,6 @@ public class PersonalityController : MonoBehaviour
         hungerWeight = hunger;
         thirstWeight = thirst;
         minMoneyThreshold = minMoney;
-        maxMoneyThreshold = maxMoney;
     }
 
     void GeneratePersonality ()
@@ -69,7 +67,8 @@ public class PersonalityController : MonoBehaviour
         randomizationFactor = 0.5f;
         moneyNeededPerDay = 60; // Based off eating 3X per day, sleeping 1X per day, and watching TV 2X per day.
         npcController = GetComponent<NPCController>();
-        GeneratePersonality(); // IF THERE IS NO PERSONALITY TAGS
+        minMoneyThreshold = moneyNeededPerDay; // Set by default to the minimum money needed per day.
+        GeneratePersonality(); // IF THERE IS NO PERSONALITY TAG
     }
 
     void Update()
@@ -94,7 +93,7 @@ public class PersonalityController : MonoBehaviour
 
 
         // Check if NPC needs to work to earn money before satisfying needs.
-        needsMoney = (npcController.money < minMoneyThreshold || npcController.money > maxMoneyThreshold);
+        needsMoney = (npcController.money < minMoneyThreshold);
 
         if (needsMoney)
         {
