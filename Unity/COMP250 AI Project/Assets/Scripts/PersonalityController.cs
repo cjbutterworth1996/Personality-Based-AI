@@ -84,6 +84,7 @@ public class PersonalityController : MonoBehaviour
     void ChooseNextAction()
     {
         npcController.isBusy = true;
+        npcController.withinRangeOfTarget = false;
         bladderReward = CalcReward(npcController.bladder, bladderWeight);
         boredomReward = CalcReward(npcController.boredom, boredomWeight);
         energyReward = CalcReward(npcController.energy, energyWeight);
@@ -132,7 +133,6 @@ public class PersonalityController : MonoBehaviour
             if (npcController.target == "Toilet")
             {
                 StartCoroutine(npcController.EmptyBladder());
-                Debug.Log("ActionComplete");
             }
             else if (npcController.target == "TV")
             {
@@ -151,11 +151,5 @@ public class PersonalityController : MonoBehaviour
                 StartCoroutine(npcController.Drink());
             }
         }
-    }
-
-    // Checks to see if the withinRangeOfTarget bool is accurate by checking nearest station to target station.
-    bool CheckStation()
-    {
-
     }
 }

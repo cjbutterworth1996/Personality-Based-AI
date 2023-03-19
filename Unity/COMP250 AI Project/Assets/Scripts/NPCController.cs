@@ -21,6 +21,7 @@ public class NPCController : MonoBehaviour
     public SceneController sceneController;
     public PersonalityController personalityController;
     float distanceThreshold;
+    string stationString;
 
     public class Need
     {
@@ -76,6 +77,7 @@ public class NPCController : MonoBehaviour
 
     public void Death()
     {
+        Debug.Log("Died");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -83,6 +85,7 @@ public class NPCController : MonoBehaviour
     public IEnumerator Drink()
     {
         timeInSeconds = 1;
+        Debug.Log("Drinking");
 
         if (withinRangeOfTarget)
         {
@@ -92,6 +95,7 @@ public class NPCController : MonoBehaviour
                 thirst.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
+            isBusy = false;
         }
     }
 
@@ -99,6 +103,7 @@ public class NPCController : MonoBehaviour
     public IEnumerator Eat()
     {
         timeInSeconds = 10;
+        Debug.Log("Eating");
 
         if (withinRangeOfTarget)
         {
@@ -109,6 +114,7 @@ public class NPCController : MonoBehaviour
                 hunger.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
+            isBusy = false;
         }
     }
 
@@ -126,7 +132,6 @@ public class NPCController : MonoBehaviour
                 bladder.currentValue = 100;
             }
             yield return new WaitForSeconds(timeInSeconds);
-            Debug.Log("Bladder = " + bladder.currentValue);
             isBusy = false;
         }
     }
@@ -135,6 +140,7 @@ public class NPCController : MonoBehaviour
     public IEnumerator Sleep()
     {
         timeInSeconds = 80;
+        Debug.Log("Sleeping");
 
         if (withinRangeOfTarget)
         {
@@ -152,6 +158,7 @@ public class NPCController : MonoBehaviour
     public IEnumerator WatchTv()
     {
         timeInSeconds = 10;
+        Debug.Log("Watching TV");
 
         if (withinRangeOfTarget)
         {
@@ -170,6 +177,7 @@ public class NPCController : MonoBehaviour
     public IEnumerator Work()
     {
         timeInSeconds = 10;
+        Debug.Log("Working");
 
         if (withinRangeOfTarget)
         {
@@ -182,6 +190,7 @@ public class NPCController : MonoBehaviour
     // The NPC moves to the nearest targeted station.
     public void MoveToTarget()
     {
+        Debug.Log("Moving");
         distanceToNearestStation = Mathf.Infinity;
         GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
 
@@ -199,13 +208,11 @@ public class NPCController : MonoBehaviour
 
         if (closestTarget != null)
         {
-            StartCoroutine(StepTowardsTarget());
+            StartCoroutine(StepTowardsTarget(target));
         }
-
-        Debug.Log("Finished movement function");
     }
 
-    IEnumerator StepTowardsTarget()
+    IEnumerator StepTowardsTarget(string target)
     {
         while (Vector3.Distance(transform.position, closestTarget.transform.position) > distanceThreshold)
         {
@@ -214,7 +221,31 @@ public class NPCController : MonoBehaviour
         }
 
         withinRangeOfTarget = true;
-        isBusy = false;
+        DoNearestAction(target);
         Debug.Log("Reached target");
+    }
+
+    public void DoNearestAction(string target)
+    {
+        if (target == "Toilet")
+        {
+            StartCoroutine(EmptyBladder());
+        }
+        else if (target == "TV")
+        {
+            StartCoroutine(WatchTv());
+        }
+        else if (target == "Bed")
+        {
+            StartCoroutine(Sleep());
+        }
+        else if (target == "Fridge")
+        {
+            StartCoroutine(Eat());
+        }
+        else if (target == "Sink")
+        {
+            StartCoroutine(Drink());
+        }
     }
 }
