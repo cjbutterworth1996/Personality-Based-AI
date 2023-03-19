@@ -145,7 +145,7 @@ public class NPCController : MonoBehaviour
     // The NPC uses the bed to refill their energy.
     public IEnumerator Sleep()
     {
-        timeInSeconds = 80;
+        timeInSeconds = 10;
         Debug.Log("Sleeping");
 
         if (withinRangeOfTarget)
@@ -204,7 +204,6 @@ public class NPCController : MonoBehaviour
     // The NPC moves to the nearest targeted station.
     public void MoveToTarget()
     {
-        Debug.Log("Moving");
         distanceToNearestStation = Mathf.Infinity;
         GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(target);
 
