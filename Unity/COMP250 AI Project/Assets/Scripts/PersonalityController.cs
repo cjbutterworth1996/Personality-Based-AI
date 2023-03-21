@@ -20,6 +20,8 @@ public class PersonalityController : MonoBehaviour
     float hungerWeight; // The weight that skews the reward value determination in CalcReward().
     float maxWeight; // The maximum weight value.
     float minWeight; // The minimum weight value.
+    float randomizationFactor; // The randomization factor for randomizing choices based on reward values. 1.05 by default.
+    float temp; // Used for temporarily holding a float in CalcReward. Makes code easier to read.
     float thirstReward; // The reward value for choosing to do Drink() from the NPCController script.
     float thirstWeight; // The weight that skews the reward value determination in CalcReward().
     float totalWeight; // The total weight of all weight values combined.
@@ -29,6 +31,9 @@ public class PersonalityController : MonoBehaviour
     NPCController npcController; // A reference to the attached NPCController script.
     PersonalityPreset personalityPreset; // A reference to the attached PersonalityPreset script.
 
+    /// <summary>
+    /// Method <c>GeneratePersonality</c> randomly generates weights for each Need.
+    /// </summary>
     void GeneratePersonality ()
     {
         // This sets the min and max weight for each need.
@@ -51,18 +56,27 @@ public class PersonalityController : MonoBehaviour
         thirstWeight /= totalWeight;
     }
 
+    /// <summary>
+    /// Method <c>GeneratePersonalityFromPreset</c> generates a personality according to the PersonalityPreset script's set values.
+    /// </summary>
+    /// <param name="bladder"></param> is the set value for the bladder Need.
+    /// <param name="boredom"></param> is the set value for the boredom Need.
+    /// <param name="energy"></param> is the set value for the energy Need.
+    /// <param name="hunger"></param> is the set value for the hunger Need.
+    /// <param name="thirst"></param> is the set value for the thirst Need.
+    /// <param name="minMoney"></param> is the set value for the minimum money threshold.
     void GeneratePersonalityFromPreset(float bladder, float boredom, float energy, float hunger, float thirst, int minMoney)
     {
-        minWeight = 0.1f;
-        maxWeight = 1f;
         bladderWeight = bladder;
         boredomWeight = boredom;
         energyWeight = energy;
         hungerWeight = hunger;
         thirstWeight = thirst;
+        maxWeight = 1f;
         minMoneyThreshold = minMoney;
+        minWeight = 0.1f;
 
-        // This ensures that user input remains in bounds of the weightings
+        // This ensures that user input remains within bounds of the weightings.
         if(bladderWeight > maxWeight)
         {
             bladderWeight = maxWeight;
@@ -114,18 +128,39 @@ public class PersonalityController : MonoBehaviour
         thirstWeight /= totalWeight;
     }
 
-    // Creates a reward for fulfilling a need based on distance from maxValue and the NPC's personality-set rewardWeight.
-    float CalcReward(NPCController.Need need, float rewardWeight)
+    /// <summary>
+    /// Method <c>CalcReward</c> determines the reward value for each available action by taking the difference of the max value and current value multiplied by the reward weight.
+    /// This value is then further modified with a randomization factor. The further away the randomization factor is from 1, the greater the fluctuation will be.
+    /// Adjusting this too far will render the weightings essentially irrelevant.
+    /// </summary>
+    /// <param name="need"></param>
+    /// <param name="rewardWeight"></param>
+    /// <param name="randomizationFactor"></param>
+    /// <returns></returns>
+    float CalcReward(NPCController.Need need, float rewardWeight, float randomizationFactor)
     {
-        return (need.maxValue - need.currentValue) * rewardWeight;
+        temp = ((need.maxValue - need.currentValue) * rewardWeight);
+
+        if (temp * randomizationFactor < temp)
+        {
+            return Random.Range(temp * randomizationFactor, temp);
+        }
+        else
+        {
+            return Random.Range(temp, temp * randomizationFactor);
+        }      
     }
 
+    /// <summary>
+    /// Method <c>Start</c> is called at the beginning of the program.
+    /// </summary>
     void Start()
     {
         moneyNeededPerDay = 60; // Based off eating 3X per day, sleeping 1X per day, and watching TV 2X per day.
         npcController = GetComponent<NPCController>();
         minMoneyThreshold = moneyNeededPerDay; // Set by default to the minimum money needed per day.
         personalityPreset = GetComponent<PersonalityPreset>();
+        randomizationFactor = 1.05f;
 
         // If the PersonalityPreset script is attached to the NPC, it will override the random generation of personality weights.
         if(personalityPreset != null)
@@ -139,6 +174,9 @@ public class PersonalityController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method <c>Update</c> is called every frame.
+    /// </summary>
     void Update()
     {
         if (!npcController.isBusy) 
@@ -148,19 +186,22 @@ public class PersonalityController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method <c>ChooseNextAction</c> sets the NPC's target based on reward values.
+    /// </summary>
     void ChooseNextAction()
     {
         npcController.isBusy = true;
         npcController.withinRangeOfTarget = false;
-        bladderReward = CalcReward(npcController.bladder, bladderWeight);
-        boredomReward = CalcReward(npcController.boredom, boredomWeight);
-        energyReward = CalcReward(npcController.energy, energyWeight);
-        hungerReward = CalcReward(npcController.hunger, hungerWeight);
-        thirstReward = CalcReward(npcController.thirst, thirstWeight);
+        bladderReward = CalcReward(npcController.bladder, bladderWeight, randomizationFactor);
+        boredomReward = CalcReward(npcController.boredom, boredomWeight, randomizationFactor);
+        energyReward = CalcReward(npcController.energy, energyWeight, randomizationFactor);
+        hungerReward = CalcReward(npcController.hunger, hungerWeight, randomizationFactor);
+        thirstReward = CalcReward(npcController.thirst, thirstWeight, randomizationFactor);
         highestReward = Mathf.Max(bladderReward, boredomReward, energyReward, hungerReward, thirstReward);
 
 
-        // Check if NPC needs to work to earn money before satisfying needs.
+        // Checks if NPC needs to work to earn money before satisfying needs.
         needsMoney = (npcController.money < minMoneyThreshold);
 
         if (needsMoney)
@@ -190,6 +231,7 @@ public class PersonalityController : MonoBehaviour
 
         Debug.Log("New Target = " + npcController.target);
 
+        // If the NPC is not within range of the target, it moves there.
         if (!npcController.withinRangeOfTarget)
         {
             Debug.Log("Moving");
