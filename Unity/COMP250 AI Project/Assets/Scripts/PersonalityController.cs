@@ -15,7 +15,7 @@ public class PersonalityController : MonoBehaviour
     public float hungerReward;
     public float thirstReward;
     public float highestReward;
-    public float minMoneyThreshold;
+    public int minMoneyThreshold;
     public float randomizationFactor;
     public float minWeight;
     public float maxWeight;
@@ -25,7 +25,7 @@ public class PersonalityController : MonoBehaviour
     public bool needsMoney;
     public PersonalityPreset personalityPreset;
 
-    public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, float minMoney)
+    public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, int minMoney)
     {
         bladderWeight = bladder;
         boredomWeight = boredom;
@@ -59,12 +59,65 @@ public class PersonalityController : MonoBehaviour
 
     void GeneratePersonalityFromPreset(float bladder, float boredom, float energy, float hunger, float thirst, int minMoney)
     {
+        minWeight = 0.1f;
+        maxWeight = 1f;
         bladderWeight = bladder;
         boredomWeight = boredom;
         energyWeight = energy;
         hungerWeight = hunger;
         thirstWeight = thirst;
         minMoneyThreshold = minMoney;
+
+        // This ensures that user input remains in bounds of the weightings
+        if(bladderWeight > maxWeight)
+        {
+            bladderWeight = maxWeight;
+        }
+        if (boredomWeight > maxWeight)
+        {
+            boredomWeight = maxWeight;
+        }
+        if (energyWeight > maxWeight)
+        {
+            energyWeight = maxWeight;
+        }
+        if (hungerWeight > maxWeight)
+        {
+            hungerWeight = maxWeight;
+        }
+        if (thirstWeight > maxWeight)
+        {
+            thirstWeight = maxWeight;
+        }
+        if (bladderWeight < minWeight)
+        {
+            bladderWeight = minWeight;
+        }
+        if (boredomWeight < minWeight)
+        {
+            boredomWeight = minWeight;
+        }
+        if (energyWeight < minWeight)
+        {
+            energyWeight = minWeight;
+        }
+        if (hungerWeight < minWeight)
+        {
+            hungerWeight = minWeight;
+        }
+        if (bladderWeight < minWeight)
+        {
+            bladderWeight = minWeight;
+        }
+        
+
+        // Normalizes all of the weights to add up to 1. This is to ensure all of the probabilities add up to 100%.
+        totalWeight = bladderWeight + boredomWeight + energyWeight + hungerWeight + thirstWeight;
+        bladderWeight /= totalWeight;
+        boredomWeight /= totalWeight;
+        energyWeight /= totalWeight;
+        hungerWeight /= totalWeight;
+        thirstWeight /= totalWeight;
     }
 
     // Creates a reward for fulfilling a need based on distance from maxValue and the NPC's personality-set rewardWeight.
@@ -80,12 +133,14 @@ public class PersonalityController : MonoBehaviour
         npcController = GetComponent<NPCController>();
         minMoneyThreshold = moneyNeededPerDay; // Set by default to the minimum money needed per day.
         personalityPreset = GetComponent<PersonalityPreset>();
+
         if(personalityPreset != null)
         {
             GeneratePersonalityFromPreset(personalityPreset.bladderWeight, personalityPreset.boredomWeight, personalityPreset.energyWeight, personalityPreset.hungerWeight, personalityPreset.thirstWeight, personalityPreset.minMoneyThreshold);
         }
         else
         {
+            Debug.Log("Random Personality Generated");
             GeneratePersonality(); // IF THERE IS NO PERSONALITY TAG
         }
     }

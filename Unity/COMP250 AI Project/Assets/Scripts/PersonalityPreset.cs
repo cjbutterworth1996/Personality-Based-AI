@@ -10,4 +10,14 @@ public class PersonalityPreset : MonoBehaviour
     public float hungerWeight;
     public float thirstWeight;
     public int minMoneyThreshold;
+
+    public PersonalityPreset(float bladder, float boredom, float energy, float hunger, float thirst, int minMoney)
+    {
+        bladderWeight = bladder;
+        boredomWeight = boredom;
+        energyWeight = energy;
+        hungerWeight = hunger;
+        thirstWeight = thirst;
+        minMoneyThreshold = minMoney;
+    }
 }
