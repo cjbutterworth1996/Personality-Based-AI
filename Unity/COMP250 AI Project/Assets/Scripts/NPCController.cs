@@ -66,7 +66,7 @@ public class NPCController : MonoBehaviour
         {
             bar.value = updateAmount;
 
-            // If the any need reaches zero and death is enabled, the NPC method Death() is called.
+            // If any need reaches zero and death is enabled, the NPC method Death() is called.
             if (bar.value <= 0 && attachedNPC.deathEnabled)
             {
                 attachedNPC.Death();
@@ -80,7 +80,6 @@ public class NPCController : MonoBehaviour
     public Need energy;
     public Need hunger;
     public Need thirst;
-
 
     /// <summary>
     /// Method <c>Start</c> is called at the beginning of the program.

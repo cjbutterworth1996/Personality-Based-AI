@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>PersonalityController</c> handles the functions relating to generating personalities and Needs weights. 
+/// It handles all the logic behind what an NPC AI decides to do next.
+/// </summary>
 public class PersonalityController : MonoBehaviour
 {
-    public float bladderWeight;
+    float bladderWeight;
     public float boredomWeight;
     public float energyWeight;
     public float hungerWeight;
@@ -25,6 +29,15 @@ public class PersonalityController : MonoBehaviour
     public bool needsMoney;
     public PersonalityPreset personalityPreset;
 
+    /// <summary>
+    /// Method <c>PersonalityController</c> instantiates a PersonalityController.
+    /// </summary>
+    /// <param name="bladder"></param>
+    /// <param name="boredom"></param>
+    /// <param name="energy"></param>
+    /// <param name="hunger"></param>
+    /// <param name="thirst"></param>
+    /// <param name="minMoney"></param>
     public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, int minMoney)
     {
         bladderWeight = bladder;
@@ -134,6 +147,7 @@ public class PersonalityController : MonoBehaviour
         minMoneyThreshold = moneyNeededPerDay; // Set by default to the minimum money needed per day.
         personalityPreset = GetComponent<PersonalityPreset>();
 
+        // If the PersonalityPreset script is attached to the NPC, it will override the random generation of personality weights.
         if(personalityPreset != null)
         {
             GeneratePersonalityFromPreset(personalityPreset.bladderWeight, personalityPreset.boredomWeight, personalityPreset.energyWeight, personalityPreset.hungerWeight, personalityPreset.thirstWeight, personalityPreset.minMoneyThreshold);
@@ -141,7 +155,7 @@ public class PersonalityController : MonoBehaviour
         else
         {
             Debug.Log("Random Personality Generated");
-            GeneratePersonality(); // IF THERE IS NO PERSONALITY TAG
+            GeneratePersonality(); // This gets called if there is no PersonalityPreset script attached to the NPC.
         }
     }
 
