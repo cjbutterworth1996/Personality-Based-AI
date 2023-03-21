@@ -8,45 +8,26 @@ using UnityEngine;
 /// </summary>
 public class PersonalityController : MonoBehaviour
 {
-    float bladderWeight;
-    public float boredomWeight;
-    public float energyWeight;
-    public float hungerWeight;
-    public float thirstWeight;
-    public float bladderReward;
-    public float boredomReward;
-    public float energyReward;
-    public float hungerReward;
-    public float thirstReward;
-    public float highestReward;
-    public int minMoneyThreshold;
-    public float randomizationFactor;
-    public float minWeight;
-    public float maxWeight;
-    public float totalWeight;
-    public int moneyNeededPerDay;
-    public NPCController npcController;
-    public bool needsMoney;
-    public PersonalityPreset personalityPreset;
+    bool needsMoney; // Determines if the NPC needs to Work() before satisfying needs.
+    float bladderReward; // The reward value for choosing to do EmptyBladder() from the NPCController script.
+    float bladderWeight; // The weight that skews the reward value determination in CalcReward().
+    float boredomReward; // The reward value for choosing to do WatchTv() from the NPCController script.
+    float boredomWeight; // The weight that skews the reward value determination in CalcReward().
+    float energyReward; // The reward value for choosing to do Sleep() from the NPCController script.
+    float energyWeight; // The weight that skews the reward value determination in CalcReward().
+    float highestReward; // The highest reward value.
+    float hungerReward; // The reward value for choosing to do Eat() from the NPCController script.
+    float hungerWeight; // The weight that skews the reward value determination in CalcReward().
+    float maxWeight; // The maximum weight value.
+    float minWeight; // The minimum weight value.
+    float thirstReward; // The reward value for choosing to do Drink() from the NPCController script.
+    float thirstWeight; // The weight that skews the reward value determination in CalcReward().
+    float totalWeight; // The total weight of all weight values combined.
+    int minMoneyThreshold; // The minimum money threshold for an NPC AI determining that they need to Work().
+    int moneyNeededPerDay; // A placeholder value that determines a rough estimate for what the minMoneyThreshold should be based on default price values of satisfying Needs.
 
-    /// <summary>
-    /// Method <c>PersonalityController</c> instantiates a PersonalityController.
-    /// </summary>
-    /// <param name="bladder"></param>
-    /// <param name="boredom"></param>
-    /// <param name="energy"></param>
-    /// <param name="hunger"></param>
-    /// <param name="thirst"></param>
-    /// <param name="minMoney"></param>
-    public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, int minMoney)
-    {
-        bladderWeight = bladder;
-        boredomWeight = boredom;
-        energyWeight = energy;
-        hungerWeight = hunger;
-        thirstWeight = thirst;
-        minMoneyThreshold = minMoney;
-    }
+    NPCController npcController; // A reference to the attached NPCController script.
+    PersonalityPreset personalityPreset; // A reference to the attached PersonalityPreset script.
 
     void GeneratePersonality ()
     {
@@ -141,7 +122,6 @@ public class PersonalityController : MonoBehaviour
 
     void Start()
     {
-        randomizationFactor = 0.5f;
         moneyNeededPerDay = 60; // Based off eating 3X per day, sleeping 1X per day, and watching TV 2X per day.
         npcController = GetComponent<NPCController>();
         minMoneyThreshold = moneyNeededPerDay; // Set by default to the minimum money needed per day.

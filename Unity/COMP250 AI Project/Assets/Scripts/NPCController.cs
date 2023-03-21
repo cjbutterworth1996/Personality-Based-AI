@@ -23,7 +23,6 @@ public class NPCController : MonoBehaviour
     GameObject closestTarget; //The nearest GameObject with the NPC's target tag.
     int timeInSeconds; //Used to determine how long each possible action should take the NPC to complete.
 
-    PersonalityController personalityController; // A reference to the nearest PersonalityController, used for determining action weights.
     SceneController sceneController; // A reference to the nearest SceneController, used for handling NPC death.
     UIController uiController; // A reference to the nearest UIController, used for updating UI elements.
 
@@ -99,7 +98,6 @@ public class NPCController : MonoBehaviour
         distanceThreshold = 2f;
         isBusy = false;
         money = 100;
-        personalityController = GetComponent<PersonalityController>();
         withinRangeOfTarget = false;
     }
 
