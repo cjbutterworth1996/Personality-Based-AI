@@ -152,7 +152,7 @@ public class PersonalityController : MonoBehaviour
     }
 
     /// <summary>
-    /// Method <c>Start</c> is called at the beginning of the program.
+    /// Method <c>Start</c> is called before the first frame.
     /// </summary>
     void Start()
     {

@@ -2,30 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>StationController</c> is used to control the NPC's potential targets to interact with.
+/// It also handles spawning for instantiating prefab targets.
+/// </summary>
 public class StationController : MonoBehaviour
 {
-	public GameObject bedPrefab;
-	public GameObject computerPrefab;
-	public GameObject fridgePrefab;
-	public GameObject sinkPrefab;
-	public GameObject toiletPrefab;
-	public GameObject tvPrefab;
-	public int numberOfBeds;
-	public int numberOfComputers;
-	public int numberOfFridges;
-	public int numberOfSinks;
-	public int numberOfToilets;
-	public int numberOfTvs;
-	public Transform[] bedArray;
-	public Transform[] computerArray;
-	public Transform[] fridgeArray;
-	public Transform[] sinkArray;
-	public Transform[] toiletArray;
-	public Transform[] tvArray;
+	public GameObject bedPrefab; //Prefab bed object.
+	public GameObject computerPrefab; //Prefab computer object.
+    public GameObject fridgePrefab; //Prefab fridge object.
+    public GameObject sinkPrefab; //Prefab sink object.
+    public GameObject toiletPrefab; //Prefab toilet object.
+    public GameObject tvPrefab; //Prefab TV object.
+    public int numberOfBeds; //Number of beds being spawned.
+    public int numberOfComputers; //Number of computers being spawned.
+    public int numberOfFridges; //Number of fridges being spawned.
+    public int numberOfSinks; //Number of sinks being spawned.
+    public int numberOfToilets; //Number of toilets being spawned.
+    public int numberOfTvs; //Number of TVs being spawned.
+    public Transform[] bedArray; // Array of bed spawn points in the scene.
+	public Transform[] computerArray; // Array of computer spawn points in the scene.
+    public Transform[] fridgeArray; // Array of fridge spawn points in the scene.
+    public Transform[] sinkArray; // Array of sink spawn points in the scene.
+    public Transform[] toiletArray; // Array of toilet spawn points in the scene.
+    public Transform[] tvArray; // Array of TV spawn points in the scene.
 
-	// Start is called before the first frame update
-	private void Start()
+    /// <summary>
+    /// Method <c>Start</c> is called before the first frame.
+    /// </summary>
+    private void Start()
 	{
+        // This instantiates all of the specified prefabs given the number of each prefab and array of specified prefab spawn points.
         for (int i = 0; i < numberOfBeds; i++)
         {
             Instantiate(bedPrefab, bedArray[i].position, bedArray[i].rotation);
