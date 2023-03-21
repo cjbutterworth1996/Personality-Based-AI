@@ -2,22 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>PersonalityPreset</c> provides values for overriding randomly generated values in the PersonalityController script.
+/// </summary>
 public class PersonalityPreset : MonoBehaviour
 {
-    public float bladderWeight;
-    public float boredomWeight;
-    public float energyWeight;
-    public float hungerWeight;
-    public float thirstWeight;
-    public int minMoneyThreshold;
-
-    public PersonalityPreset(float bladder, float boredom, float energy, float hunger, float thirst, int minMoney)
-    {
-        bladderWeight = bladder;
-        boredomWeight = boredom;
-        energyWeight = energy;
-        hungerWeight = hunger;
-        thirstWeight = thirst;
-        minMoneyThreshold = minMoney;
-    }
+    public float bladderWeight; // Preset bladder weight.
+    public float boredomWeight; // Preset boredom weight.
+    public float energyWeight; // Preset energy weight.
+    public float hungerWeight; // Preset hunger weight.
+    public float thirstWeight; // Preset thirst weight.
+    public int minMoneyThreshold; // Preset minimum money.
 }
