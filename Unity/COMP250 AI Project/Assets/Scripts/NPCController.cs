@@ -7,21 +7,22 @@ using UnityEngine.SceneManagement;
 
 public class NPCController : MonoBehaviour
 {
-    public int money;
-    public string target;
-    public float speed;
-    float distanceToNearestStation;
-    float distance;
-    GameObject[] targetObjects;
-    GameObject closestTarget;
-    public bool withinRangeOfTarget;
-    public bool isBusy;
-    public int timeInSeconds;
-    public UIController uiController;
-    public SceneController sceneController;
-    public PersonalityController personalityController;
-    float distanceThreshold;
-    string stationString;
+    public bool isBusy; // Determines if NPC should take another action.
+    public bool withinRangeOfTarget; // Determines if NPC is within range of their target.
+    public float speed; //Used in StepTowardsTarget() to determine how fast the NPC should move towards their target.
+    public int money; //NPC's current money.
+    public string target; //NPC's current target.
+
+    float distance; //Used in calculating distances from NPC to stations.
+    float distanceThreshold; //Used to determine when an NPC is close enough to a station to begin using it.
+    float distanceToNearestStation; //The distance from the NPC to the nearest target station.
+    GameObject[] targetObjects; //Array of all possible target objects.
+    GameObject closestTarget; //The nearest GameObject with the NPC's target tag.
+    int timeInSeconds; //Used to determine how long each possible action should take the NPC to complete.
+
+    UIController uiController; // A reference to the nearest UIController, used for updating UI elements.
+    SceneController sceneController; // A reference to the nearest SceneController, used for handling NPC death.
+    PersonalityController personalityController; // A reference to the nearest PersonalityController, used for determining action weights.
 
     public class Need
     {
@@ -233,6 +234,7 @@ public class NPCController : MonoBehaviour
             yield return null;
         }
 
+        Debug.Log("Made it");
         withinRangeOfTarget = true;
         DoNearestAction(target);
     }
