@@ -12,6 +12,7 @@ TagManager:
   - TV
   - NPC
   - UI Controller
+  - Station
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,7 @@ public class PersonalityController : MonoBehaviour
     public int moneyNeededPerDay;
     public NPCController npcController;
     public bool needsMoney;
+    public PersonalityPreset personalityPreset;
 
     public PersonalityController(float bladder, float boredom, float energy, float hunger, float thirst, float minMoney)
     {
@@ -56,6 +57,16 @@ public class PersonalityController : MonoBehaviour
         thirstWeight /= totalWeight;
     }
 
+    void GeneratePersonalityFromPreset(float bladder, float boredom, float energy, float hunger, float thirst, int minMoney)
+    {
+        bladderWeight = bladder;
+        boredomWeight = boredom;
+        energyWeight = energy;
+        hungerWeight = hunger;
+        thirstWeight = thirst;
+        minMoneyThreshold = minMoney;
+    }
+
     // Creates a reward for fulfilling a need based on distance from maxValue and the NPC's personality-set rewardWeight.
     float CalcReward(NPCController.Need need, float rewardWeight)
     {
@@ -68,7 +79,15 @@ public class PersonalityController : MonoBehaviour
         moneyNeededPerDay = 60; // Based off eating 3X per day, sleeping 1X per day, and watching TV 2X per day.
         npcController = GetComponent<NPCController>();
         minMoneyThreshold = moneyNeededPerDay; // Set by default to the minimum money needed per day.
-        GeneratePersonality(); // IF THERE IS NO PERSONALITY TAG
+        personalityPreset = GetComponent<PersonalityPreset>();
+        if(personalityPreset != null)
+        {
+            GeneratePersonalityFromPreset(personalityPreset.bladderWeight, personalityPreset.boredomWeight, personalityPreset.energyWeight, personalityPreset.hungerWeight, personalityPreset.thirstWeight, personalityPreset.minMoneyThreshold);
+        }
+        else
+        {
+            GeneratePersonality(); // IF THERE IS NO PERSONALITY TAG
+        }
     }
 
     void Update()

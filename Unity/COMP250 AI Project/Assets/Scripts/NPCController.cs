@@ -235,7 +235,6 @@ public class NPCController : MonoBehaviour
 
         withinRangeOfTarget = true;
         DoNearestAction(target);
-        Debug.Log("Reached target");
     }
 
     public void DoNearestAction(string target)
